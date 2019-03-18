@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-function Tweet() {
+//{tweet} prop, destructured
+function Tweet({tweet}) {
     return (
         <div className="tweet">
             <Avatar/>
@@ -18,6 +19,18 @@ function Tweet() {
             </div>
         </div>
     );
+};
+
+var testTweet = {
+    message: "Wesh la tweetosphère ! Qu'est ce qu'il se pas sur le net ?",
+    gravatar: "xyz",
+    author: {
+        handle: "catperson",
+        name: "IAMA Cat Person"
+    },
+    like: 2,
+    retwteets: 0,
+    timestamp: "2016_07_30 21:24:37"
 };
 
 function Avatar() {
@@ -67,4 +80,4 @@ const MoreOptionsButton = () => (
     <i className="fa fa-ellipsis-h more-options-button"/>
 );
 
-ReactDOM.render(<Tweet/>, document.getElementById("root"));
+ReactDOM.render(<Tweet tweet={testTweet}/>, document.getElementById("root"));
