@@ -9,7 +9,7 @@ function Tweet({tweet}) {
             <Avatar hash={tweet.gravatar}/>
             <div className="content">
                 <NameWithHandle/><Time/>
-                <Message/>
+                <Message text={tweet.message}/>
                 <div className="buttons">
                 <ReplyButton/>
                 <RetweetButton/>
@@ -44,10 +44,10 @@ function Avatar({hash}) {
     );
 }
 
-function Message() {
+function Message({text}) {
     return (
         <div className="message">
-            This is less than 140 characters.
+            {text}
         </div>
     );
 };
