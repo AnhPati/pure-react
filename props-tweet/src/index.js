@@ -6,7 +6,7 @@ import "./index.css";
 function Tweet({tweet}) {
     return (
         <div className="tweet">
-            <Avatar/>
+            <Avatar hash={tweet.gravatar}/>
             <div className="content">
                 <NameWithHandle/><Time/>
                 <Message/>
@@ -33,10 +33,11 @@ var testTweet = {
     timestamp: "2016_07_30 21:24:37"
 };
 
-function Avatar() {
+function Avatar({hash}) {
+    var url = `https://www.gravatar.com/avatar/${hash}`;
     return (
             <img
-                src="https://www.gravatar.com/avatar/nothing"
+                src={url}
                 className="avatar"
                 alt="avatar"
             />
