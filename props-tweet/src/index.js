@@ -13,8 +13,8 @@ function Tweet({tweet}) {
                 <Message text={tweet.message}/>
                 <div className="buttons">
                     <ReplyButton/>
-                    <RetweetButton/>
-                    <LikeButton/>
+                    <RetweetButton count={tweet.retweets}/>
+                    <LikeButton count={tweet.like}/>
                     <MoreOptionsButton/>
                 </div>
             </div>
@@ -29,9 +29,9 @@ var testTweet = {
         handle: "catperson",
         name: "IAMA Cat Person"
     },
-    like: 2,
+    likes: 2,
     retwteets: 0,
-    timestamp: "2016_07_30 21:24:37"
+    timestamp: "2016-07-30 21:24:37"
 };
 
 function Avatar({hash}) {
@@ -53,7 +53,8 @@ function Message({text}) {
     );
 };
 
-function NameWithHandle({name, handle}) {
+function NameWithHandle({author}) {
+    const {name, handle} = author;
     return (
         <span className="name-with-handle">
             <span className="name">{name}</span>
@@ -62,21 +63,46 @@ function NameWithHandle({name, handle}) {
     )
 };
 
-const Time = ({time}) => (
-    <span className="time">{time}</span>
-);
+const Time = ({time}) => {
+    const timeString = moment(time).fromNow();
+    return (
+        <span className="time">{timeString}</span>
+    )
+};
 
 const ReplyButton = () => (
     <i className="fa fa-reply reply-button"/>
 );
 
-const RetweetButton = () => (
-    <i className="fa fa-retweet retweet-button"/>
+const RetweetButton = ({count}) => (
+    <span className="retweet-button">
+        <i className="fa fa-retweet"/>
+        {getRetweetCount(count)}
+    </span>
 );
 
-const LikeButton = () => (
-    <i className="fa fa-heart like-button"/>
+const LikeButton = ({count}) => (
+    <span className="like-button">
+        <i className="fa fa-heart"/>
+            {count > 0 &&
+                <span className="likecount">
+                    {count}
+                </span>
+            }
+    </span>
 );
+
+function getRetweetCount(count) {
+    if (count > 0) {
+        return (
+            <span class="retweet-count">
+                {count} 
+            </span>
+        )
+    } else {
+        return null;
+    }
+};
 
 const MoreOptionsButton = () => (
     <i className="fa fa-ellipsis-h more-options-button"/>
