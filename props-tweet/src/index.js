@@ -3,27 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import moment from "moment";
 
-import PropTypes from "prop-types";
-
-//Testing PropTypes
-function Comment({author, message, likes}) {
-    return (
-        <div>
-            <div className="author">{author}</div>
-            <div className="message">{message}</div>
-            <div className="likes">
-                {likes > 0 ? likes : 'No'} likes
-            </div>
-        </div>
-    )
-}
-
-Comment.propTypes = {
-    message: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    likes: PropTypes.number
-}
-
 //{tweet} prop, destructured
 function Tweet({tweet}) {
     return (
@@ -127,4 +106,4 @@ const MoreOptionsButton = () => (
     <i className="fa fa-ellipsis-h more-options-button"/>
 );
 
-ReactDOM.render(<Comment author="an_error"/>, document.getElementById("root"));
+ReactDOM.render(<Tweet tweet={testTweet}/>, document.getElementById("root"));
