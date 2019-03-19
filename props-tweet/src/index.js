@@ -14,7 +14,7 @@ function Tweet({tweet}) {
                 <div className="buttons">
                     <ReplyButton/>
                     <RetweetButton count={tweet.retweets}/>
-                    <LikeButton count={tweet.like}/>
+                    <LikeButton count={tweet.likes}/>
                     <MoreOptionsButton/>
                 </div>
             </div>
@@ -30,7 +30,7 @@ var testTweet = {
         name: "IAMA Cat Person"
     },
     likes: 2,
-    retwteets: 0,
+    retweets: 0,
     timestamp: "2016-07-30 21:24:37"
 };
 
@@ -77,7 +77,7 @@ const ReplyButton = () => (
 const RetweetButton = ({count}) => (
     <span className="retweet-button">
         <i className="fa fa-retweet"/>
-        {getRetweetCount(count)}
+        <Count count={count}/>
     </span>
 );
 
@@ -92,7 +92,7 @@ const LikeButton = ({count}) => (
     </span>
 );
 
-function getRetweetCount(count) {
+function Count({count}) {
     if (count > 0) {
         return (
             <span class="retweet-count">
