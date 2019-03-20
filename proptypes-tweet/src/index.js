@@ -23,6 +23,20 @@ function Tweet({tweet}) {
     );
 };
 
+Tweet.propTypes = {
+    tweet: PropTypes.shape({
+        message: PropTypes.string,
+        gravatar: PropTypes.string,
+        author: PropTypes.shape({
+            handle: PropTypes.string,
+            name: PropTypes.string
+        }),
+        likes: PropTypes.number,
+        retweets: PropTypes.number,
+        timestamp: PropTypes.string
+    })
+}
+
 var testTweet = {
     message: "Wesh la tweetosphère ! Qu'est ce qu'il se pas sur le net ?",
     gravatar: "xyz",
@@ -48,7 +62,7 @@ function Avatar({hash}) {
 
 Avatar.propTypes = {
     hash: PropTypes.string
-}
+};
 
 function Message({text}) {
     return (
