@@ -46,6 +46,10 @@ function Avatar({hash}) {
     );
 };
 
+Avatar.propTypes = {
+    hash: PropTypes.string
+}
+
 function Message({text}) {
     return (
         <div className="message">
