@@ -68,6 +68,13 @@ function NameWithHandle({author}) {
     );
 };
 
+NameWithHandle.propTypes = {
+    author: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        handle: PropTypes.string.isRequired
+    }).isRequired
+};
+
 const Time = ({time}) => {
     const timeString = moment(time).fromNow();
     return (
