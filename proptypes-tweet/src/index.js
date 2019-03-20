@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import moment from "moment";
+import PropTypes from "prop-types";
 
 //{tweet} prop, destructured
 function Tweet({tweet}) {
@@ -89,6 +90,10 @@ const LikeButton = ({count}) => (
             </span>
     </span>
 );
+
+LikeButton.propTypes = {
+    count: PropTypes.number
+};
 
 function Count({count}) {
     if (count > 0) {
