@@ -44,7 +44,7 @@ function Avatar({hash}) {
                 alt="avatar"
             />
     );
-}
+};
 
 function Message({text}) {
     return (
@@ -54,6 +54,10 @@ function Message({text}) {
     );
 };
 
+Message.prototypes = {
+    text: PropTypes.string
+};
+
 function NameWithHandle({author}) {
     const {name, handle} = author;
     return (
@@ -61,15 +65,19 @@ function NameWithHandle({author}) {
             <span className="name">{name}</span>
             <span className="handle">@{handle}</span>
         </span>
-    )
+    );
 };
 
 const Time = ({time}) => {
     const timeString = moment(time).fromNow();
     return (
         <span className="time">{timeString}</span>
-    )
+    );
 };
+
+Time.prototypes = {
+    time: PropTypes.string
+}
 
 const ReplyButton = () => (
     <i className="fa fa-reply reply-button"/>
@@ -81,6 +89,10 @@ const RetweetButton = ({count}) => (
         <Count count={count}/>
     </span>
 );
+
+RetweetButton.propTypes = {
+    count: PropTypes.number
+};
 
 const LikeButton = ({count}) => (
     <span className="like-button">
@@ -104,7 +116,7 @@ function Count({count}) {
         )
     } else {
         return null;
-    }
+    };
 };
 
 const MoreOptionsButton = () => (
