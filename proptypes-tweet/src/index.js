@@ -27,10 +27,7 @@ Tweet.propTypes = {
     tweet: PropTypes.shape({
         message: PropTypes.string,
         gravatar: PropTypes.string,
-        author: PropTypes.shape({
-            handle: PropTypes.string,
-            name: PropTypes.string
-        }),
+        author: PropTypes.object,
         likes: PropTypes.number,
         retweets: PropTypes.number,
         timestamp: PropTypes.string
