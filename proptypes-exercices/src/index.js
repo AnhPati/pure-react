@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
+import "./index.css";
 
 function Exercices() {
     return (
-        <div>
-            <h1>PropTypes Exercices</h1>
-            <ul>
-                <li>
-                    <h2>Exercice 1 :</h2>
+        <div className="mainContainer">
+            <h1 className="title-xl u-marginBottom-md">PropTypes Exercices</h1>
+            <ul className="exercicesContainer c-ListeNone u-flexBox centered column">
+                <li className="exercicesItem u-flexBox centered column">
+                    <h2 class="title-md u-marginBottom-md">Exercice 1 :</h2>
                     <ExerciceUn/>
                 </li>
-                
             </ul>
         </div>
     );
