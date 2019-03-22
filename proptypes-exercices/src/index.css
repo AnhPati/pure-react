@@ -170,3 +170,26 @@ html, body, #root {
 .expirationBox {
   width: 1.5rem;
 }
+
+/*=====[[Exercice 4]]=====*/
+
+.poster {
+  background-color: #000000;
+  padding: 3rem 5rem;
+  color: #FFFFFF;
+}
+
+.posterImg > img {
+  width: 100%;
+  max-width: 50rem;
+  height: auto;
+  border: 2rem double #FFFFFF;
+}
+
+.bigLetter {
+  font-size: 4.2rem;
+}
+
+.wordTitle {
+  padding-top: 0.2rem;
+}

@@ -180,15 +180,15 @@ function ExerciceQuatre() {
 
 function Poster({posterInfo}) {
     return (
-        <div>
-            <div>
+        <div className="poster u-flexBox column centered">
+            <div className="posterImg">
                 <img src={posterInfo.image.url} alt={posterInfo.image.description}/>
             </div>
-            <h3>
-                {posterInfo.title}
+            <h3 className="title-xl u-flexBox">
+                <span className="bigLetter">{posterInfo.title.firstLetter}</span><u className="wordTitle">{posterInfo.title.word}</u><span className="bigLetter">{posterInfo.title.lastLetter}</span>
             </h3>
             <div>
-                <p>
+                <p className="paragraph-md">
                     {posterInfo.text}
                 </p>
             </div>
@@ -201,7 +201,11 @@ Poster.propTypes = {
         url: PropTypes.string,
         description: PropTypes.string
     }).isRequired,
-    title: PropTypes.string,
+    title: PropTypes.shape({
+        firstLetter: PropTypes.string,
+        word: PropTypes.string,
+        lastLetter: PropTypes.string
+    }),
     text: PropTypes.string
 }
 
@@ -210,7 +214,11 @@ var createYourself = {
         url: "https://france3-regions.francetvinfo.fr/bourgogne-franche-comte/sites/regions_france3/files/styles/top_big/public/assets/images/2017/08/15/bull-frog-2525989_960_720-3213565.jpg?itok=61D-OrdO",
         description: ""
     },
-    title: "Innocence",
+    title: {
+        firstLetter: "I",
+        word: "nnocenc",
+        lastLetter:"E"
+    },
     text: "If you're looking for the perfect man, kiss me."
 };
 
