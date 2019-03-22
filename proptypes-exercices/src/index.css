@@ -60,6 +60,7 @@ html, body, .mainContainer {
 
 
 /*=====[[TYPOGRAPHY]]=====*/
+
 .title-xl {
   font-size: 2.4rem;
   font-weight: 900;
@@ -70,9 +71,23 @@ html, body, .mainContainer {
   font-weight: 600;
 }
 
+.paragraph-md {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.paragraph-sm {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.paragraph-md.bold {
+  font-weight: 600!important;
+}
+
 /*=====[[COMPONENTS]]=====*/
 
-.c-ListNone {
+.c-listNone {
   list-style: none;
   padding-inline-start: 0;
 }

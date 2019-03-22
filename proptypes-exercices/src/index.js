@@ -7,7 +7,7 @@ function Exercices() {
     return (
         <div className="mainContainer">
             <h1 className="title-xl u-marginBottom-md">PropTypes Exercices</h1>
-            <ul className="exercicesContainer c-ListeNone u-flexBox centered column">
+            <ul className="exercicesContainer c-listeNone u-flexBox centered column">
                 <li className="exercicesItem u-flexBox centered column">
                     <h2 class="title-md u-marginBottom-md">Exercice 1 :</h2>
                     <ExerciceUn/>
@@ -19,7 +19,7 @@ function Exercices() {
 
 function ExerciceUn() {
     return (
-        <div>
+        <div className="u-flexBox centered">
             <AdressLabel person={defaultPerson}/>
         </div>
     );
@@ -28,14 +28,14 @@ function ExerciceUn() {
 function AdressLabel({person}) {
     return (
         <div>
-            <ul>
-                <li>
-                    {person.fullName}
+            <ul className="c-listeNone u-flexBox column">
+                <li className="u-flexBox fullname paragraph-md">
+                    {person.fullname}
                 </li>
-                <li>
+                <li className="u-flexBox adress paragraph-sm">
                     {person.adress}
                 </li>
-                <li>
+                <li className="u-flexBox city paragraph-md bold">
                     {person.city}
                 </li>
             </ul>
