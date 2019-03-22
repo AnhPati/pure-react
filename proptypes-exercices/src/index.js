@@ -13,8 +13,12 @@ function Exercices() {
                     <ExerciceUn/>
                 </li>
                 <li className="exercicesItem u-flexBox centered column">
-                    <h2 class="title-md u-marginBottom-md">Exercice 1 :</h2>
+                    <h2 class="title-md u-marginBottom-md">Exercice 2 :</h2>
                     <ExerciceDeux/>
+                </li>
+                <li className="exercicesItem u-flexBox centered column">
+                    <h2 class="title-md u-marginBottom-md">Exercice 3 :</h2>
+                    <ExerciceTrois/>
                 </li>
             </ul>
         </div>
@@ -63,7 +67,7 @@ var defaultPerson = {
 
 function ExerciceDeux() {
     return (
-        <div className="u-flexBox centered Envelope">
+        <div className="u-flexBox centered envelope">
             <Envelope infos={infosCourrier}/>
         </div>
     );
@@ -105,6 +109,61 @@ var infosCourrier = {
         city: " San Francisco, CA 94101"
     },
     stamp: "https://i.pinimg.com/originals/47/58/89/47588906f1bb5634462bd7afe40c32c5.jpg"
+};
+
+function ExerciceTrois() {
+    return (
+        <div className="u-flexBox centered Envelope">
+            <CreditCard cardInfo={infoCreditCard}/>
+        </div>
+    );
+};
+
+function CreditCard({cardInfo}) {
+    return (
+        <div className="creditCard">
+            <div>
+                <h3>{cardInfo.bankName}</h3>
+            </div>
+            <div>
+                <p>{cardInfo.expirationDate.entitled}</p>
+                <p>{cardInfo.expirationDate.date}</p>
+            </div>
+            <div>
+                <p>{cardInfo.creditCardNumber.cardNumber}</p>
+                <p>{cardInfo.creditCardNumber.confirmationNumber}</p>
+            </div>
+            <div>
+                <h3>{cardInfo.personName}</h3>
+            </div>
+        </div>
+    )
+};
+
+CreditCard.propTypes = {
+    bankName: PropTypes.string.isRequired,
+    creditCardNumber: PropTypes.shape({
+        cardNumber: PropTypes.string,
+        confirmationNumber: PropTypes.number
+    }).isRequired,
+    expirationDate: PropTypes.shape({
+        entitled: PropTypes.string,
+        date: PropTypes.string
+    }).isRequired,
+    personName: PropTypes.string.isRequired
+}
+
+var infoCreditCard = {
+    bankName: "Big Bank, Inc.",
+    creditCardNumber: {
+        cardNumber: "1234 5678 8765 4321",
+        confirmationNumber: 1234
+    },
+    expirationDate: {
+        entitled: "VALID THRU",
+        date: "08/19"
+    },
+    personName: "CARDHOLDER NAME"
 };
 
 

@@ -26,9 +26,8 @@ html, body, #root {
 .exercicesItem {
   width: 100%;
   border-top: 1px solid #c7c5c5;
-  border-bottom: 1px solid #c7c5c5;
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 2.5rem 0.5rem;
 }
 
 /*=====[[UTILITARY]]=====*/
@@ -105,7 +104,7 @@ html, body, #root {
 
 /*=====[[Exercice 2]]=====*/
 
-.Envelope {
+.envelope {
   border: 1px solid #c7c5c5;
   padding: 1rem;
 }
@@ -127,4 +126,11 @@ html, body, #root {
 .to {
   margin-top: 3rem;
   margin-bottom: 3rem;
+}
+
+/*=====[[Exercice 3]]=====*/
+
+.creditCard {
+  background-color: #197a3a;
+  color: #FFFFFF;
 }
