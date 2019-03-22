@@ -12,6 +12,10 @@ function Exercices() {
                     <h2 class="title-md u-marginBottom-md">Exercice 1 :</h2>
                     <ExerciceUn/>
                 </li>
+                <li className="exercicesItem u-flexBox centered column">
+                    <h2 class="title-md u-marginBottom-md">Exercice 1 :</h2>
+                    <ExerciceDeux/>
+                </li>
             </ul>
         </div>
     );
@@ -19,7 +23,7 @@ function Exercices() {
 
 function ExerciceUn() {
     return (
-        <div className="u-flexBox centered">
+        <div className="u-flexBox centered adressLabel u-marginBottom-md">
             <AdressLabel person={defaultPerson}/>
         </div>
     );
@@ -35,7 +39,7 @@ function AdressLabel({person}) {
                 <li className="u-flexBox adress paragraph-sm">
                     {person.adress}
                 </li>
-                <li className="u-flexBox city paragraph-md bold">
+                < li className = "u-flexBox city paragraph-md bold" >
                     {person.city}
                 </li>
             </ul>
@@ -56,5 +60,52 @@ var defaultPerson = {
     adress: "123 Fake St.",
     city: "Boston, MA 02118"
 }
+
+function ExerciceDeux() {
+    return (
+        <div className="u-flexBox centered">
+            <Envelope infos={infosCourrier}/>
+        </div>
+    );
+};
+
+function Envelope({infos}) {
+    return (
+        <div className="Envelope">
+            <div>
+                <div className="from">
+                    <AdressLabel person={infos.fromPerson}/>
+                </div>
+                <div className="stamp">
+                    <img src={infos.stamp} alt="stamp"/>
+                </div>
+            </div>
+            <div className="to">
+                <AdressLabel person={infos.toPerson}/>
+            </div>
+        </div>
+    )
+};
+
+Envelope.propTypes = {
+    toPerson: PropTypes.object.isRequired,
+    fromPerson: PropTypes.object,
+    stamp: PropTypes.string.isRequired
+}
+
+var infosCourrier = {
+    toPerson: {
+        fullname: "Mr.Sender",
+        adress: "123 Fake St.",
+        city: "Boston, MA 02118"
+    },
+    fromPerson: {
+        fullname: "Mrs.Receiver",
+        adress: "123 Fake St.",
+        city: " San Francisco, CA 94101"
+    },
+    stamp: "https://i.pinimg.com/originals/47/58/89/47588906f1bb5634462bd7afe40c32c5.jpg"
+};
+
 
 ReactDOM.render(<Exercices/>, document.getElementById("root"))
