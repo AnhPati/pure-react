@@ -193,7 +193,7 @@ function Poster({posterInfo}) {
                 </p>
             </div>
         </div>
-    )
+    );
 };
 
 Poster.propTypes = {
@@ -207,11 +207,11 @@ Poster.propTypes = {
 
 var createYourself = {
     image: {
-        url: "",
+        url: "https://france3-regions.francetvinfo.fr/bourgogne-franche-comte/sites/regions_france3/files/styles/top_big/public/assets/images/2017/08/15/bull-frog-2525989_960_720-3213565.jpg?itok=61D-OrdO",
         description: ""
     },
-    title: "",
-    text: ""
+    title: "Innocence",
+    text: "If you're looking for the perfect man, kiss me."
 };
 
 ReactDOM.render(<Exercices/>, document.getElementById("root"))
