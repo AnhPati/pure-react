@@ -20,6 +20,10 @@ function Exercices() {
                     <h2 class="title-md u-marginBottom-md">Exercice 3 :</h2>
                     <ExerciceTrois/>
                 </li>
+                <li className="exercicesItem u-flexBox centered column">
+                    <h2 class="title-md u-marginBottom-md">Exercice 4 :</h2>
+                    <ExerciceQuatre/>
+                </li>
             </ul>
         </div>
     );
@@ -113,7 +117,7 @@ var infosCourrier = {
 
 function ExerciceTrois() {
     return (
-        <div className="u-flexBox centered Envelope">
+        <div className="u-flexBox centered">
             <CreditCard cardInfo={infoCreditCard}/>
         </div>
     );
@@ -166,5 +170,48 @@ var infoCreditCard = {
     personName: "CARDHOLDER NAME"
 };
 
+function ExerciceQuatre() {
+    return (
+        <div className="u-flexBox centered">
+            <Poster posterInfo={createYourself}/>
+        </div>
+    );
+};
+
+function Poster({posterInfo}) {
+    return (
+        <div>
+            <div>
+                <img src={posterInfo.image.url} alt={posterInfo.image.description}/>
+            </div>
+            <h3>
+                {posterInfo.title}
+            </h3>
+            <div>
+                <p>
+                    {posterInfo.text}
+                </p>
+            </div>
+        </div>
+    )
+};
+
+Poster.propTypes = {
+    image: PropTypes.shape({
+        url: PropTypes.string,
+        description: PropTypes.string
+    }).isRequired,
+    title: PropTypes.string,
+    text: PropTypes.string
+}
+
+var createYourself = {
+    image: {
+        url: "",
+        description: ""
+    },
+    title: "",
+    text: ""
+};
 
 ReactDOM.render(<Exercices/>, document.getElementById("root"))
