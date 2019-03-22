@@ -63,7 +63,7 @@ var defaultPerson = {
 
 function ExerciceDeux() {
     return (
-        <div className="u-flexBox centered">
+        <div className="u-flexBox centered Envelope">
             <Envelope infos={infosCourrier}/>
         </div>
     );
@@ -71,16 +71,16 @@ function ExerciceDeux() {
 
 function Envelope({infos}) {
     return (
-        <div className="Envelope">
-            <div>
+        <div className="u-flexBox column">
+            <div className="fromContainer u-flexBox u-marginBottom-md">
                 <div className="from">
                     <AdressLabel person={infos.fromPerson}/>
                 </div>
-                <div className="stamp">
+                < div className = "stamp u-marginLeft-xl" >
                     <img src={infos.stamp} alt="stamp"/>
                 </div>
             </div>
-            <div className="to">
+            <div className="to u-flexBox centered">
                 <AdressLabel person={infos.toPerson}/>
             </div>
         </div>

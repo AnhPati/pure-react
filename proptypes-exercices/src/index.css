@@ -59,6 +59,9 @@ html, body, #root {
   margin-bottom: 1.2rem;
 }
 
+.u-marginLeft-xl {
+  margin-left: 6rem;
+}
 
 /*=====[[TYPOGRAPHY]]=====*/
 
@@ -98,4 +101,30 @@ html, body, #root {
 .adressLabel {
   border: 1px solid #c7c5c5;
   padding: 1rem;
+}
+
+/*=====[[Exercice 2]]=====*/
+
+.Envelope {
+  border: 1px solid #c7c5c5;
+  padding: 1rem;
+}
+
+.fromContainer {
+  justify-content: space-between;
+}
+
+.from {
+  margin-right: 8rem;
+}
+
+.stamp > img {
+  width: 100%;
+  max-width: 4.5rem;
+  height: auto;
+}
+
+.to {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
