@@ -122,19 +122,19 @@ function ExerciceTrois() {
 function CreditCard({cardInfo}) {
     return (
         <div className="creditCard">
-            <div>
-                <h3>{cardInfo.bankName}</h3>
+            <div className="bankName">
+                <h3 className="title-sm">{cardInfo.bankName}</h3>
+            </div>
+            <div className="u-flexBox u-marginBottom-sm column">
+                <p className="cardNumber paragraph-sm u-marginNone">{cardInfo.creditCardNumber.cardNumber}</p>
+                <p className="paragraph-xxs u-marginNone">{cardInfo.creditCardNumber.confirmationNumber}</p>
+            </div>
+            <div className="u-flexBox centered">
+                <p className="expirationBox paragraph-xxs u-marginNone">{cardInfo.expirationDate.entitled}</p>
+                <p className="paragraph-xs u-marginNone">{cardInfo.expirationDate.date}</p>
             </div>
             <div>
-                <p>{cardInfo.expirationDate.entitled}</p>
-                <p>{cardInfo.expirationDate.date}</p>
-            </div>
-            <div>
-                <p>{cardInfo.creditCardNumber.cardNumber}</p>
-                <p>{cardInfo.creditCardNumber.confirmationNumber}</p>
-            </div>
-            <div>
-                <h3>{cardInfo.personName}</h3>
+                <h3 className="paragraph-xs">{cardInfo.personName}</h3>
             </div>
         </div>
     )

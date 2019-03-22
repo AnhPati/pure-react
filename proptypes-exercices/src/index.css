@@ -47,7 +47,7 @@ html, body, #root {
 }
 
 .u-marginNone {
-  margin: none;
+  margin: unset;
 }
 
 .u-marginTop-md {
@@ -56,6 +56,10 @@ html, body, #root {
 
 .u-marginBottom-md {
   margin-bottom: 1.2rem;
+}
+
+.u-marginBottom-sm {
+  margin-bottom: 0.6rem;
 }
 
 .u-marginLeft-xl {
@@ -74,6 +78,11 @@ html, body, #root {
   font-weight: 600;
 }
 
+.title-sm {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
 .paragraph-md {
   font-size: 1.4rem;
   font-weight: 400;
@@ -82,6 +91,16 @@ html, body, #root {
 .paragraph-sm {
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+.paragraph-xs {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.paragraph-xxs {
+  font-size: 0.4rem;
+  font-weight: 200;
 }
 
 .paragraph-md.bold {
@@ -133,4 +152,21 @@ html, body, #root {
 .creditCard {
   background-color: #197a3a;
   color: #FFFFFF;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  padding: 0 1.2rem 0 1.2rem;
+}
+
+.bankName > h3 {
+  text-align: end;
+  margin-bottom: 3rem;
+}
+
+.cardNumber {
+  word-spacing: 1.4rem;
+}
+
+.expirationBox {
+  width: 1.5rem;
 }
