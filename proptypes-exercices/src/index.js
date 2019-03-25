@@ -273,10 +273,10 @@ LineReception.propTypes = {
 
 var emailInfos = {
     number: 0,
-    sender: "",
-    subject: "",
-    date: "",
-    message: ""
+    sender: "React Newsletter",
+    subject: "React Newsletter - Issue 36",
+    date: "July 15th 2016",
+    message: "Read this issue on the web http://reactjsnewsletter.com/issues/36?sid=3QGDYBX ### Comme..."
 };
 
 ReactDOM.render(<Exercices/>, document.getElementById("root"))
