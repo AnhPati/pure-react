@@ -24,6 +24,10 @@ function Exercices() {
                     <h2 class="title-md u-marginBottom-md">Exercice 4 :</h2>
                     <ExerciceQuatre/>
                 </li>
+                <li className="exercicesItem u-flexBox centered column">
+                    <h2 class="title-md u-marginBottom-md">Exercice 5 :</h2>
+                    <ExerciceCinq/>
+                </li>
             </ul>
         </div>
     );
@@ -220,6 +224,59 @@ var createYourself = {
         lastLetter:"E"
     },
     text: "If you're looking for the perfect man, kiss me."
+};
+
+function ExerciceCinq() {
+    return (
+        <div className="u-flexBox centered">
+            <LineReception email={emailInfos}/>
+        </div>
+    );
+};
+
+function LineReception({email}) {
+    return (
+        <div>
+            <div>
+                <input type="checkbox" name={`selection_${email.number}`} id={`selection_${email.number}`}/>
+                <button>
+                    <i className="fas fa-thumbtack"></i>
+                </button>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <p>{email.sender}</p>
+                        <p>{email.subject}</p>
+                    </div>
+                    <div>
+                        <p>{email.date}</p>
+                    </div>
+                </div>
+                <div>
+                    <p>{email.subject}</p>
+                    <p>{email.date}</p>
+                    <p>{email.message}</p>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+LineReception.propTypes = {
+    number: PropTypes.number.isRequired,
+    sender: PropTypes.string.isRequired,
+    subject: PropTypes.string,
+    date: PropTypes.string.isRequired,
+    message: PropTypes.string
+}
+
+var emailInfos = {
+    number: 0,
+    sender: "",
+    subject: "",
+    date: "",
+    message: ""
 };
 
 ReactDOM.render(<Exercices/>, document.getElementById("root"))
