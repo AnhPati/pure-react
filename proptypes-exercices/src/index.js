@@ -236,27 +236,27 @@ function ExerciceCinq() {
 
 function LineReception({email}) {
     return (
-        <div>
-            <div>
-                <input type="checkbox" name={`selection_${email.number}`} id={`selection_${email.number}`}/>
-                <button>
-                    <i className="fas fa-thumbtack"></i>
+        <div className="u-flexBox mailItem u-noWrap">
+            <div className="u-flexBox centered u-noWrap">
+                <input className="checkMail" type="checkbox" name={`selection_${email.number}`} id={`selection_${email.number}`}/>
+                <button className="c-buttonBlank">
+                    <i className="iconMail fas fa-thumbtack"></i>
                 </button>
             </div>
-            <div>
-                <div>
-                    <div>
-                        <p>{email.sender}</p>
-                        <p>{email.subject}</p>
+            <div className="u-flexBox column u-paddingLeft-xs u-noWrap">
+                <div className="u-flexBox entitleMail-box u-marginBottom-xs">
+                    <div className="u-flexBox">
+                        <p className="paragraph-xs u-marginNone">{email.sender}</p>
+                        <p className="u-paddingLeft-xs paragraph-xs u-marginNone">{email.subject}</p>
                     </div>
                     <div>
-                        <p>{email.date}</p>
+                        <p className="paragraph-xs u-marginNone">{email.date}</p>
                     </div>
                 </div>
-                <div>
-                    <p>{email.subject}</p>
-                    <p>{email.date}</p>
-                    <p>{email.message}</p>
+                <div className="u-flexBox contentMail-box u-noWrap">
+                    <p className="paragraph-xs u-marginNone">{email.subject}</p>
+                    <p className="u-paddingLeft-xs paragraph-xs u-marginNone">{email.date}</p>
+                    <p className="messageMail u-paddingLeft-xs paragraph-xs u-marginNone">{email.message}</p>
                 </div>
             </div>
         </div>

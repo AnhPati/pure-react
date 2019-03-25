@@ -46,6 +46,10 @@ html, body, #root {
   flex-direction: column;
 }
 
+.u-noWrap {
+  flex-wrap: nowrap!important;
+}
+
 .u-marginNone {
   margin: unset;
 }
@@ -62,8 +66,16 @@ html, body, #root {
   margin-bottom: 0.6rem;
 }
 
+.u-marginBottom-xs {
+  margin-bottom: 0.4rem;
+}
+
 .u-marginLeft-xl {
   margin-left: 6rem;
+}
+
+.u-paddingLeft-xs {
+  padding-left: 0.4rem;
 }
 
 /*=====[[TYPOGRAPHY]]=====*/
@@ -112,6 +124,11 @@ html, body, #root {
 .c-listeNone {
   list-style: none;
   padding-inline-start: 0;
+}
+
+.c-buttonBlank {
+    border: 0;
+    background-color: inherit;
 }
 
 /*=====[[Exercice 1]]=====*/
@@ -192,4 +209,36 @@ html, body, #root {
 
 .wordTitle {
   padding-top: 0.2rem;
+}
+
+/*=====[[Exercice 4]]=====*/
+
+.mailItem {
+  border-top: 1px solid #c7c5c5;
+  border-bottom: 1px solid #c7c5c5;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.iconMail {
+  font-size: 0.6rem;
+  color: #c7c5c5;
+}
+
+.entitleMail-box {
+  justify-content: space-between;
+}
+
+.entitleMail-box p {
+  font-weight: 500!important;
+}
+
+.contentMail-box p {
+  white-space: nowrap;
+}
+
+.messageMail {
+  min-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
