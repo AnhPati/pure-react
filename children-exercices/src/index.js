@@ -69,6 +69,29 @@ function ChildrenArray() {
                     🦈
                 </span>
             </LastChildOnly>
+            <Head test={numberTest}>
+                <span>
+                    🦔
+                </span>
+                <span>
+                    🐏
+                </span>
+                <span>
+                    🐑
+                </span>
+                <span>
+                    🐐
+                </span>
+                <span>
+                    🐁
+                </span>
+                <span>
+                    🐇
+                </span>
+                <span>
+                    🐿️
+                </span>
+            </Head>
         </div>
     );
 };
@@ -81,7 +104,7 @@ function FirstChildOnly({children}) {
                 <span className="c-circle u-marginRight-xs">a</span>
                 <span className="decored">Escoge tu pajaro :</span>
             </p>
-            <p>
+            <p className="childSize">
                 {firstChild}
             </p>
         </div>
@@ -101,8 +124,8 @@ function LastChildOnly({children}) {
                 <span className="c-circle u-marginRight-xs">b</span>
                 <span className="decored">Escoge tu pez :</span>
             </p>
-            <p>
-                {lastChild}
+            <p className="childSize">
+                {allChildren[lastChild]}
             </p>
         </div>
     );
@@ -110,6 +133,26 @@ function LastChildOnly({children}) {
 
 LastChildOnly.propTypes = {
     children: PropTypes.node.isRequired
+};
+
+function Head({children, test}) {
+    let childrenArray = React.Children.toArray(children);
+
+    return (
+        <div>
+            <p>{test.number}</p>
+            <p></p>
+        </div>
+    );
+};
+
+var numberTest = {
+    number: 3
 }
+
+Head.propTypes = {
+    number: PropTypes.number.isRequired,
+    children: PropTypes.node.isRequired
+};
 
 ReactDOM.render(<ChildrenExercices/>, document.getElementById("root"));
