@@ -115,6 +115,11 @@ function ChildrenArray() {
                     🐿️
                 </span>
             </Tail>
+            <Dialog>
+                <Title/>
+                <Body/>
+                <Footer/>
+            </Dialog>
         </div>
     );
 };
@@ -212,6 +217,52 @@ var numberLast = {
 Tail.propTypes = {
     test: PropTypes.object.isRequired,
     children: PropTypes.node.isRequired
+};
+
+function Dialog({children}) {
+    let childArray = React.Children.toArray(children);
+
+    return (
+        <div className="modal-content">
+            <div className="modal-header">
+                {childArray[0]}
+            </div>
+            <div className="modal-body">
+                {childArray[1]}
+            </div>
+            <div className="modal-footer">
+                {childArray[2]}
+            </div>
+        </div>
+    );
+};
+
+function Title() {
+    return (
+        <div>
+            <h2 className="modal-title">I'm here !</h2>
+        </div>
+    );
+};
+
+function Body() {
+    return (
+        <div className="u-marginBottom-lg u-marginTop-lg">
+            <p>But, I'm on the way, please wait me...</p>
+        </div>
+    );
+};
+
+function Footer() {
+    return (
+        <div>
+            <button className="btn btn-light">Click me !</button>
+        </div>
+    );
+};
+
+Dialog.propTypes = {
+    children: PropTypes.node
 };
 
 ReactDOM.render(<ChildrenExercices/>, document.getElementById("root"));

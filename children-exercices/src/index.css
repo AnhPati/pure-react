@@ -39,6 +39,10 @@ html, body, #root {
   flex-direction: column;
 }
 
+.u-marginTop-lg {
+  margin-top: 4.6rem;
+}
+
 .u-marginBottom-lg {
   margin-bottom: 4.6rem;
 }
