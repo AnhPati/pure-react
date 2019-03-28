@@ -69,7 +69,7 @@ function ChildrenArray() {
                     🦈
                 </span>
             </LastChildOnly>
-            <Head test={numberTest}>
+            <Head test={numberFirst}>
                 <span>
                     🦔
                 </span>
@@ -92,6 +92,29 @@ function ChildrenArray() {
                     🐿️
                 </span>
             </Head>
+            <Tail test={numberLast}>
+                <span>
+                    🦔
+                </span>
+                <span>
+                    🐏
+                </span>
+                <span>
+                    🐑
+                </span>
+                <span>
+                    🐐
+                </span>
+                <span>
+                    🐁
+                </span>
+                <span>
+                    🐇
+                </span>
+                <span>
+                    🐿️
+                </span>
+            </Tail>
         </div>
     );
 };
@@ -136,22 +159,58 @@ LastChildOnly.propTypes = {
 };
 
 function Head({children, test}) {
-    let childrenArray = React.Children.toArray(children);
+    let childrenFirst = React.Children.map(children, (child) => {
+        
+        if (children.indexOf(child) < test.number) {
+          return <React.Fragment>{child}</React.Fragment>;
+        }
+    });
 
     return (
-        <div>
-            <p>{test.number}</p>
-            <p></p>
+        <div className="childBox u-flexBox centered column u-marginBottom-lg">
+            <p className="paragraph-md u-marginBottom-sm u-flexBox">
+                <span className="c-circle u-marginRight-xs">c</span>
+                <span className="decored">Escoge tus animales :</span>
+            </p>
+            <p className="childSize">
+                {childrenFirst}
+            </p>
         </div>
     );
 };
 
-var numberTest = {
+var numberFirst = {
     number: 3
 }
 
 Head.propTypes = {
-    number: PropTypes.number.isRequired,
+    test: PropTypes.object.isRequired,
+    children: PropTypes.node.isRequired
+};
+
+function Tail({ children, test }) {
+    let childrenArray = React.Children.toArray(children);
+    let childrenLast = childrenArray.slice(-test.number);
+
+    return (
+        <div className="childBox u-flexBox centered column u-marginBottom-lg">
+            <p className="paragraph-md u-marginBottom-sm u-flexBox">
+                <span className="c-circle u-marginRight-xs">d</span>
+                <span className="decored">Escoge tus animales :</span>
+            </p>
+            <p className="childSize">
+                {childrenLast}
+            </p>
+        </div>
+    );
+};
+
+var numberLast = {
+    number: 2
+}
+
+Tail.propTypes = {
+    test: PropTypes.object.isRequired,
     children: PropTypes.node.isRequired
 };
 
