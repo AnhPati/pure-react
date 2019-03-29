@@ -3,19 +3,15 @@ import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import "./index.css";
 
-function FileList({files}) {
-    return (
-        <table className="file-list">
-            <tbody>
-                {files.map(file => (
-                    <tr className="file-list-item" key={file.id}>
-                        <td className="file-name">{file.name}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
-    );
-};
+const FileList = ({files}) => (
+    <table className="file-list">
+        <tbody>
+            {files.map(file => (
+                <FileListItem key={file.id} file={file}/>
+            ))}
+        </tbody>
+    </table>
+);
 
 FileList.propTypes = {
     files: PropTypes.array
@@ -52,5 +48,11 @@ const testFiles = [
         }
     },
 ];
+
+const FileListItem = ({file}) => (
+    <tr className="file-list-item">
+        <td className="file-name">{file.name}</td>
+    </tr>
+);
 
 ReactDOM.render(<FileList files={testFiles}/>, document.getElementById("root"));
