@@ -62,11 +62,11 @@ FileListItem.propTypes = {
 function FileName({file}) {
     return (
     <React.Fragment>
-        <FileIcon file={file}/>
+        <FileIcon type={file.type}/>
         <td className="file-name">
             {file.name}
         </td>
-        <CommitMessage file={file.lastestCommit}/>
+        <CommitMessage message={file.lastestCommit.message}/>
     </React.Fragment>
 )};
 
@@ -76,33 +76,28 @@ FileName.propTypes = {
     })
 };
 
-function FileIcon({file}) {
+function FileIcon({type}) {
     return (
         <td className="file-icon">
-            <i className={`fa fa-${file.type}`}></i>
+            <i className={`fa fa-${type}`}></i>
         </td>
     );
 };
 
 FileIcon.propTypes = {
-    file: PropTypes.shape({
-        type: PropTypes.string.isRequired
-    })
+    type: PropTypes.string.isRequired
+
 };
 
-function CommitMessage({file}) {
+function CommitMessage({message}) {
     return (
     <td className="commit-message">
-        {file.message}
+        {message}
     </td>
 )};
 
 CommitMessage.propTypes = {
-    file: PropTypes.shape({
-        lastestCommit: PropTypes.shape({
-            message: PropTypes.string
-        })
-    })
+    message: PropTypes.string
 };
 
 ReactDOM.render(<FileList files={testFiles}/>, document.getElementById("root"));
