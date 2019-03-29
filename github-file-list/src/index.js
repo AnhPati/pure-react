@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
-import Time from "./time";
+import FileListItem from "./file-list-item";
 import "./index.css";
 
 const FileList = ({files}) => (
@@ -49,63 +49,5 @@ const testFiles = [
         }
     },
 ];
-
-const FileListItem = ({file}) => (
-    <tr className="file-list-item">
-        <FileName file={file}/>
-    </tr>
-);
-
-FileListItem.propTypes = {
-    file: PropTypes.object.isRequired
-}
-
-function FileName({file}) {
-    return (
-    <React.Fragment>
-        <td className="file-icon">
-            <FileIcon type={file.type}/>
-        </td>
-        <td className="file-name">
-            {file.name}
-        </td>
-        <td className="commit-message">
-            <CommitMessage message={file.lastestCommit.message}/>
-        </td>
-        <td className="age">
-            <Time time={file.updated_at}/>
-        </td>
-    </React.Fragment>
-)};
-
-FileName.propTypes = {
-    file: PropTypes.shape({
-        name: PropTypes.string.isRequired
-    })
-};
-
-function FileIcon({type}) {
-    return (
-        <span>
-            <i className={`fa fa-${type}`}></i>
-        </span>
-    );
-};
-
-FileIcon.propTypes = {
-    type: PropTypes.string.isRequired
-
-};
-
-function CommitMessage({message}) {
-    return (
-    <span>
-        {message}
-    </span>
-)};
-
-CommitMessage.propTypes = {
-    message: PropTypes.string
-};
 
 ReactDOM.render(<FileList files={testFiles}/>, document.getElementById("root"));
