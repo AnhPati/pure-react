@@ -51,12 +51,42 @@ const testFiles = [
 
 const FileListItem = ({file}) => (
     <tr className="file-list-item">
-        <td className="file-name">{file.name}</td>
+        <FileName file={file}/>
     </tr>
 );
 
 FileListItem.propTypes = {
     file: PropTypes.object.isRequired
 }
+
+function FileName({file}) {
+    return (
+    <React.Fragment>
+        <FileIcon file={file}/>
+        <td className="file-name">
+            {file.name}
+        </td>
+    </React.Fragment>
+)};
+
+FileName.propTypes = {
+    file: PropTypes.shape({
+        name: PropTypes.string.isRequired
+    })
+};
+
+function FileIcon({file}) {
+    return (
+        <td className="file-icon">
+            <i className={`fa fa-${file.type}`}></i>
+        </td>
+    );
+};
+
+FileIcon.propTypes = {
+    file: PropTypes.shape({
+        type: PropTypes.string.isRequired
+    })
+};
 
 ReactDOM.render(<FileList files={testFiles}/>, document.getElementById("root"));
