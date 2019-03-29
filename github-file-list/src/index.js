@@ -33,7 +33,7 @@ const testFiles = [
         id: 2,
         name: 'tests',
         type: 'folder',
-        updated_at: "2016-07-11 21:24:00",
+        updated_at: "2017-07-11 21:24:00",
         lastestCommit: {
             message: 'Initial commit'
         }
@@ -68,6 +68,9 @@ function FileName({file}) {
             {file.name}
         </td>
         <CommitMessage message={file.lastestCommit.message}/>
+        <td className="age">
+            <Time time={file.updated_at}/>
+        </td>
     </React.Fragment>
 )};
 
