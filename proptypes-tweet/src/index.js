@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import moment from "moment";
+import Time from "./time";
 import PropTypes from "prop-types";
 
 //{tweet} prop, destructured
@@ -89,17 +89,6 @@ NameWithHandle.propTypes = {
         handle: PropTypes.string.isRequired
     }).isRequired
 };
-
-const Time = ({time}) => {
-    const timeString = moment(time).fromNow();
-    return (
-        <span className="time">{timeString}</span>
-    );
-};
-
-Time.prototypes = {
-    time: PropTypes.string
-}
 
 const ReplyButton = () => (
     <i className="fa fa-reply reply-button"/>

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import moment from "moment";
+import Time from "./time";
 
 //{tweet} prop, destructured
 function Tweet({tweet}) {
@@ -62,17 +62,6 @@ function NameWithHandle({author}) {
         </span>
     )
 };
-
-const Time = ({time}) => {
-    const timeString = moment(time).fromNow();
-    return (
-        <span className="time">{timeString}</span>
-    )
-};
-
-const ReplyButton = () => (
-    <i className="fa fa-reply reply-button"/>
-);
 
 const RetweetButton = ({count}) => (
     <span className="retweet-button">

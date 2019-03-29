@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
+import Time from "./time";
 import "./index.css";
 
 const FileList = ({files}) => (
