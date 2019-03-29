@@ -55,4 +55,8 @@ const FileListItem = ({file}) => (
     </tr>
 );
 
+FileListItem.propTypes = {
+    file: PropTypes.object.isRequired
+}
+
 ReactDOM.render(<FileList files={testFiles}/>, document.getElementById("root"));
