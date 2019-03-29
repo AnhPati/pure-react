@@ -23,7 +23,7 @@ const testFiles = [
         name: 'src',
         type: 'folder',
         updated_at: "2016-07-11 21:24:00",
-        lastestCommint: {
+        lastestCommit: {
             message: 'Initial commit'
         }
     },
@@ -33,7 +33,7 @@ const testFiles = [
         name: 'tests',
         type: 'folder',
         updated_at: "2016-07-11 21:24:00",
-        lastestCommint: {
+        lastestCommit: {
             message: 'Initial commit'
         }
     },
@@ -43,7 +43,7 @@ const testFiles = [
         name: 'README',
         type: 'file',
         updated_at: "2016-07-18 21:24:00",
-        lastestCommint: {
+        lastestCommit: {
             message: 'Added a readme'
         }
     },
@@ -66,6 +66,7 @@ function FileName({file}) {
         <td className="file-name">
             {file.name}
         </td>
+        <CommitMessage file={file.lastestCommit}/>
     </React.Fragment>
 )};
 
@@ -86,6 +87,21 @@ function FileIcon({file}) {
 FileIcon.propTypes = {
     file: PropTypes.shape({
         type: PropTypes.string.isRequired
+    })
+};
+
+function CommitMessage({file}) {
+    return (
+    <td className="commit-message">
+        {file.message}
+    </td>
+)};
+
+CommitMessage.propTypes = {
+    file: PropTypes.shape({
+        lastestCommit: PropTypes.shape({
+            message: PropTypes.string
+        })
     })
 };
 
