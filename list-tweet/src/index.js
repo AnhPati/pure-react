@@ -4,6 +4,16 @@ import "./index.css";
 import Time from "./time";
 import PropTypes from "prop-types";
 
+function ListTweet({tweets}) {
+    return (
+        <div>
+            {tweets.map(tweet => (
+                <Tweet key={tweet.id} tweet={tweet}/>
+            ))}
+        </div>
+    );
+};
+
 //{tweet} prop, destructured
 function Tweet({tweet}) {
     return (
@@ -34,17 +44,80 @@ Tweet.propTypes = {
     })
 }
 
-var testTweet = {
-    message: "Wesh la tweetosphère ! Qu'est ce qu'il se pas sur le net ?",
-    gravatar: "xyz",
-    author: {
-        handle: "catperson",
-        name: "IAMA Cat Person"
+var testTweets = [
+    {
+        id: 1,
+        message: "Wesh la tweetosphère ! Qu'est ce qu'il se passe sur le net ?",
+        gravatar: "xyz",
+        author: {
+            handle: "catperson",
+            name: "IAMA Cat Person"
+        },
+        likes: 2,
+        retweets: 0,
+        timestamp: "2016-07-30 21:24:37"
     },
-    likes: 2,
-    retweets: 0,
-    timestamp: "2016-07-30 21:24:37"
-};
+    {
+        id: 2,
+        message: "Wesh la tweetosphère ! Qu'est ce qu'il se passe sur le net ?",
+        gravatar: "xyz",
+        author: {
+            handle: "catperson",
+            name: "IAMA Cat Person"
+        },
+        likes: 2,
+        retweets: 0,
+        timestamp: "2016-07-30 21:24:37"
+    },
+    {
+        id: 3,
+        message: "Wesh la tweetosphère ! Qu'est ce qu'il se passe sur le net ?",
+        gravatar: "xyz",
+        author: {
+            handle: "catperson",
+            name: "IAMA Cat Person"
+        },
+        likes: 2,
+        retweets: 0,
+        timestamp: "2016-07-30 21:24:37"
+    },
+    {
+        id: 4,
+        message: "Wesh la tweetosphère ! Qu'est ce qu'il se passe sur le net ?",
+        gravatar: "xyz",
+        author: {
+            handle: "catperson",
+            name: "IAMA Cat Person"
+        },
+        likes: 2,
+        retweets: 0,
+        timestamp: "2016-07-30 21:24:37"
+    },
+    {
+        id: 5,
+        message: "Wesh la tweetosphère ! Qu'est ce qu'il se passe sur le net ?",
+        gravatar: "xyz",
+        author: {
+            handle: "catperson",
+            name: "IAMA Cat Person"
+        },
+        likes: 2,
+        retweets: 0,
+        timestamp: "2016-07-30 21:24:37"
+    },
+    {
+        id: 6,
+        message: "Wesh la tweetosphère ! Qu'est ce qu'il se passe sur le net ?",
+        gravatar: "xyz",
+        author: {
+            handle: "catperson",
+            name: "IAMA Cat Person"
+        },
+        likes: 2,
+        retweets: 0,
+        timestamp: "2016-07-30 21:24:37"
+    }
+];
 
 function Avatar({hash}) {
     var url = `https://www.gravatar.com/avatar/${hash}`;
@@ -134,4 +207,4 @@ const MoreOptionsButton = () => (
     <i className="fa fa-ellipsis-h more-options-button"/>
 );
 
-ReactDOM.render(<Tweet tweet={testTweet}/>, document.getElementById("root"));
+ReactDOM.render(<ListTweet tweets={testTweets}/>, document.getElementById("root"));
