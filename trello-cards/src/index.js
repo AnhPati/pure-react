@@ -1,12 +1,52 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import PropTypes from 'prop-types';
+import "./index.js";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function Card({data}) {
+    return (
+        <div>
+            <Header title={data.title}/>
+            <ListContainer tasks={data.task}/>
+            <Footer/>
+        </div>
+    );
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+Card.PropTypes = {
+    data: PropTypes.object
+};
+
+var dataProject = {
+    title: "Phone features",
+    task: [
+        {
+            id: 1,
+            name: "Subwoofer"
+        }, 
+        {
+            id: 2,
+            name: "Non-porous, washable"
+        },
+        {
+            id: 3,
+            name: "Wings"
+        },
+        {
+            id: 4,
+            name: "Beveled Bezel"
+        },
+        {
+            id: 5,
+            name: "Bezeled Bevel"
+        },
+        {
+            id: 6,
+            name: "Seedless"
+        }
+
+    ]
+};
+
+
+ReactDOM.render(<Card data={dataProject}/>, document.getElementById("root"));
