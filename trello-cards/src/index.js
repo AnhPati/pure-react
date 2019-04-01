@@ -3,6 +3,16 @@ import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
 import "./index.css";
 
+function ListCard({datas}) {
+    return (
+        <div className="mainContainer">
+            {datas.map(data => (
+                <Card key={data.id} data={data}/>
+            ))}
+        </div>
+    );
+};
+
 function Card({data}) {
     return (
         <div className="card u-flexBox column centered">
@@ -17,36 +27,189 @@ Card.propTypes = {
     data: PropTypes.object
 };
 
-var dataProject = {
-    title: "Phone features",
-    task: [
-        {
-            id: 1,
-            name: "Subwoofer"
-        }, 
-        {
-            id: 2,
-            name: "Non-porous, washable"
-        },
-        {
-            id: 3,
-            name: "Wings"
-        },
-        {
-            id: 4,
-            name: "Beveled Bezel"
-        },
-        {
-            id: 5,
-            name: "Bezeled Bevel"
-        },
-        {
-            id: 6,
-            name: "Seedless"
-        }
-    ]
-};
-
+var datasProject = [
+    {
+        id: 1,
+        title: "Phone features",
+        task: [
+            {
+                id: 1,
+                name: "Subwoofer"
+            }, 
+            {
+                id: 2,
+                name: "Non-porous, washable"
+            },
+            {
+                id: 3,
+                name: "Wings"
+            },
+            {
+                id: 4,
+                name: "Beveled Bezel"
+            },
+            {
+                id: 5,
+                name: "Bezeled Bevel"
+            },
+            {
+                id: 6,
+                name: "Seedless"
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Phone features",
+        task: [
+            {
+                id: 1,
+                name: "Subwoofer"
+            },
+            {
+                id: 2,
+                name: "Non-porous, washable"
+            },
+            {
+                id: 3,
+                name: "Wings"
+            },
+            {
+                id: 4,
+                name: "Beveled Bezel"
+            },
+            {
+                id: 5,
+                name: "Bezeled Bevel"
+            },
+            {
+                id: 6,
+                name: "Seedless"
+            }
+        ]
+    },
+    {
+        id: 3,
+        title: "Phone features",
+        task: [
+            {
+                id: 1,
+                name: "Subwoofer"
+            },
+            {
+                id: 2,
+                name: "Non-porous, washable"
+            },
+            {
+                id: 3,
+                name: "Wings"
+            },
+            {
+                id: 4,
+                name: "Beveled Bezel"
+            },
+            {
+                id: 5,
+                name: "Bezeled Bevel"
+            },
+            {
+                id: 6,
+                name: "Seedless"
+            }
+        ]
+    },
+    {
+        id: 4,
+        title: "Phone features",
+        task: [
+            {
+                id: 1,
+                name: "Subwoofer"
+            },
+            {
+                id: 2,
+                name: "Non-porous, washable"
+            },
+            {
+                id: 3,
+                name: "Wings"
+            },
+            {
+                id: 4,
+                name: "Beveled Bezel"
+            },
+            {
+                id: 5,
+                name: "Bezeled Bevel"
+            },
+            {
+                id: 6,
+                name: "Seedless"
+            }
+        ]
+    },
+    {
+        id: 5,
+        title: "Phone features",
+        task: [
+            {
+                id: 1,
+                name: "Subwoofer"
+            },
+            {
+                id: 2,
+                name: "Non-porous, washable"
+            },
+            {
+                id: 3,
+                name: "Wings"
+            },
+            {
+                id: 4,
+                name: "Beveled Bezel"
+            },
+            {
+                id: 5,
+                name: "Bezeled Bevel"
+            },
+            {
+                id: 6,
+                name: "Seedless"
+            }
+        ]
+    },
+    {
+        id: 6,
+        title: "Phone features",
+        task: [
+            {
+                id: 1,
+                name: "Subwoofer"
+            },
+            {
+                id: 2,
+                name: "Non-porous, washable"
+            },
+            {
+                id: 3,
+                name: "Wings"
+            },
+            {
+                id: 4,
+                name: "Beveled Bezel"
+            },
+            {
+                id: 5,
+                name: "Bezeled Bevel"
+            },
+            {
+                id: 6,
+                name: "Seedless"
+            }
+        ]
+    },
+];
+ 
 function Header({title}) {
     return (
         <header className="headerCard u-flexBox u-marginBottom-md">
@@ -132,4 +295,4 @@ function AddCardButton() {
     );
 };
 
-ReactDOM.render(<Card data={dataProject}/>, document.getElementById("root"));
+ReactDOM.render(<ListCard datas={datasProject}/>, document.getElementById("root"));

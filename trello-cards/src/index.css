@@ -50,10 +50,19 @@
   list-style: none;
 }
 
+/*====[[MAIN]]====*/
+
+.mainContainer {
+  display: flex;
+  background-color: #c2c1c1;
+  padding: 2rem;
+  overflow: hidden;
+}
+
 /*====[[CARD]]====*/
 
 .card {
-  width: 15.5rem;
+  min-width: 15.5rem;
   background-color: #037ab1;
   border: #FFFFFF 0.2rem solid;
   border-radius: 0.8rem;
