@@ -1,14 +1,30 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*====[[UTILITARY]]====*/
+
+.u-flexBox {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.u-flexBox.centered {
+  justify-content: center;
+  align-items: center;
+}
+
+.u-flexBox.column {
+  flex-direction: column;
+}
+
+.u-marginNone {
+  margin: 0!important;
+}
+
+/*====[[CARD]]====*/
+
+.card {
+  width: 15.5rem;
+  background-color: #037ab1;
+  border: #FFFFFF 0.2rem solid;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-left: 1rem;
 }

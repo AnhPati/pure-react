@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
-import "./index.js";
+import "./index.css";
 
 function Card({data}) {
     return (
-        <div>
+        <div className="card u-flexBox column centered">
             <Header title={data.title}/>
             <ListContainer tasks={data.task}/>
             <Footer/>
@@ -44,7 +44,6 @@ var dataProject = {
             id: 6,
             name: "Seedless"
         }
-
     ]
 };
 
