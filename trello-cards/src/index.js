@@ -13,7 +13,7 @@ function Card({data}) {
     );
 };
 
-Card.PropTypes = {
+Card.propTypes = {
     data: PropTypes.object
 };
 
@@ -50,10 +50,10 @@ var dataProject = {
 
 function Header({title}) {
     return (
-        <div>
+        <header>
             <CardName title={title}/>
             <MoreOptionButton/>
-        </div>
+        </header>
     );
 };
 
@@ -73,8 +73,26 @@ CardName.propTypes = {
 
 function MoreOptionButton() {
     return (
-        <i className="fa fa-ellipsis-h more-options-button"/>
+        <a href="#">
+            <i className="fa fa-ellipsis-h more-options-button"/>
+        </a>
     );  
+};
+
+function Footer() {
+    return (
+        <footer>
+            <AddCardButton/>
+        </footer>
+    );
+};
+
+function AddCardButton() {
+    return (
+        <a href="#">
+            <p>Add card...</p>
+        </a>
+    );
 };
 
 ReactDOM.render(<Card data={dataProject}/>, document.getElementById("root"));
