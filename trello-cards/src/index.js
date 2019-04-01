@@ -48,5 +48,20 @@ var dataProject = {
     ]
 };
 
+function Header({title}) {
+    return (
+        <div>
+            <CardName title={title}/>
+            <MoreButton/>
+        </div>
+    );
+};
+
+Header.propTypes = {
+    title: PropTypes.string
+};
+
+
+
 
 ReactDOM.render(<Card data={dataProject}/>, document.getElementById("root"));
