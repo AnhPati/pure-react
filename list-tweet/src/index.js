@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 function ListTweet({tweets}) {
     return (
-        <div>
+        <div className="mainContainer">
             {tweets.map(tweet => (
                 <Tweet key={tweet.id} tweet={tweet}/>
             ))}
