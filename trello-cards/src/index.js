@@ -79,6 +79,44 @@ function MoreOptionButton() {
     );  
 };
 
+function ListContainer({tasks}) {
+    return (
+        <ul>
+            {tasks.map(task => (
+                <ListItem key={task.id} task={task}/>
+            ))}
+        </ul>
+    );
+};
+
+ListContainer.propTypes = {
+    tasks: PropTypes.array
+};
+
+function ListItem({task}) {
+    return (
+        <li>
+            <ListItemName name={task.name}/>
+        </li>
+    );
+};
+
+ListItem.propTypes = {
+    task: PropTypes.object
+};
+
+function ListItemName({name}) {
+    return (
+        <p>
+            {name}
+        </p>
+    );
+};
+
+ListItemName.propTypes = {
+    name: PropTypes.string
+};
+
 function Footer() {
     return (
         <footer>
