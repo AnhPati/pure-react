@@ -52,7 +52,7 @@ function Header({title}) {
     return (
         <div>
             <CardName title={title}/>
-            <MoreButton/>
+            <MoreOptionButton/>
         </div>
     );
 };
@@ -61,7 +61,20 @@ Header.propTypes = {
     title: PropTypes.string
 };
 
+function CardName({title}) {
+    return (
+        <h2>{title}</h2>
+    );
+};
 
+CardName.propTypes = {
+    title: PropTypes.string
+};
 
+function MoreOptionButton() {
+    return (
+        <i className="fa fa-ellipsis-h more-options-button"/>
+    );  
+};
 
 ReactDOM.render(<Card data={dataProject}/>, document.getElementById("root"));
