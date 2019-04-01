@@ -18,6 +18,20 @@
   margin: 0!important;
 }
 
+/*====[[TYPOGRAPHY]]====*/
+
+.title-md {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/*====[[COMPOSANT]]====*/
+
+.c-linkBlank {
+  text-decoration: none;
+  color: inherit;
+}
+
 /*====[[CARD]]====*/
 
 .card {
@@ -27,4 +41,14 @@
   border-radius: 0.8rem;
   padding: 1rem;
   margin-left: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+}
+
+/*====[[HEADER]]====*/
+
+.headerCard {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }

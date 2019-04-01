@@ -49,7 +49,7 @@ var dataProject = {
 
 function Header({title}) {
     return (
-        <header>
+        <header className="headerCard u-flexBox">
             <CardName title={title}/>
             <MoreOptionButton/>
         </header>
@@ -62,7 +62,7 @@ Header.propTypes = {
 
 function CardName({title}) {
     return (
-        <h2>{title}</h2>
+        <h2 className="title-md u-marginNone">{title}</h2>
     );
 };
 
@@ -72,7 +72,7 @@ CardName.propTypes = {
 
 function MoreOptionButton() {
     return (
-        <a href="#">
+        <a className="c-linkBlank" href="#">
             <i className="fa fa-ellipsis-h more-options-button"/>
         </a>
     );  
