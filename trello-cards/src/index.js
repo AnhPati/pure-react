@@ -49,7 +49,7 @@ var dataProject = {
 
 function Header({title}) {
     return (
-        <header className="headerCard u-flexBox">
+        <header className="headerCard u-flexBox u-marginBottom-md">
             <CardName title={title}/>
             <MoreOptionButton/>
         </header>
@@ -80,7 +80,7 @@ function MoreOptionButton() {
 
 function ListContainer({tasks}) {
     return (
-        <ul>
+        <ul className="c-listBlank listContainer u-marginNone">
             {tasks.map(task => (
                 <ListItem key={task.id} task={task}/>
             ))}
@@ -94,7 +94,7 @@ ListContainer.propTypes = {
 
 function ListItem({task}) {
     return (
-        <li>
+        <li className="listItem u-marginBottom-md">
             <ListItemName name={task.name}/>
         </li>
     );
@@ -106,7 +106,7 @@ ListItem.propTypes = {
 
 function ListItemName({name}) {
     return (
-        <p>
+        <p className="paragraph-md u-marginNone">
             {name}
         </p>
     );

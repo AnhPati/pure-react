@@ -18,6 +18,10 @@
   margin: 0!important;
 }
 
+.u-marginBottom-md {
+  margin-bottom: 1rem;
+}
+
 /*====[[TYPOGRAPHY]]====*/
 
 .title-md {
@@ -25,11 +29,21 @@
   font-weight: 500;
 }
 
+.paragraph-md {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 /*====[[COMPOSANT]]====*/
 
 .c-linkBlank {
   text-decoration: none;
   color: inherit;
+}
+
+.c-listBlank {
+  padding-inline-start: 0;
+  list-style: none;
 }
 
 /*====[[CARD]]====*/
@@ -51,4 +65,20 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
+}
+
+/*====[[LISTCONTAINER]]====*/
+
+.listContainer {
+  width: 100%;
+}
+
+/*====[[LISTITEM]]====*/
+
+.listItem {
+  width: auto;
+  border-radius: 0.25rem;
+  background-color: #FFFFFF;
+  color: initial;
+  padding: 0.3rem;
 }
