@@ -22,6 +22,10 @@
   margin-bottom: 1rem;
 }
 
+.u-marginTop-md {
+  margin-top: 1rem;
+}
+
 /*====[[TYPOGRAPHY]]====*/
 
 .title-md {
@@ -81,4 +85,12 @@
   background-color: #FFFFFF;
   color: initial;
   padding: 0.3rem;
+}
+
+/*====[[FOOTER]]====*/
+
+.footerCard {
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-start;
 }

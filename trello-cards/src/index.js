@@ -118,7 +118,7 @@ ListItemName.propTypes = {
 
 function Footer() {
     return (
-        <footer>
+        <footer className="footerCard u-marginTop-md">
             <AddCardButton/>
         </footer>
     );
@@ -126,8 +126,8 @@ function Footer() {
 
 function AddCardButton() {
     return (
-        <a href="#">
-            <p>Add card...</p>
+        <a className="c-linkBlank" href="#">
+            <p className="paragraph-md u-marginNone">Add card...</p>
         </a>
     );
 };
