@@ -109,4 +109,67 @@ ListArticles.propTypes = {
     news: PropTypes.array
 };
 
+function Article({new}) {
+    return (
+        <div>
+            <ArticleEntitle new={new}/>
+            <ArticleInfo info={new}/>
+        </div>
+    );
+};
+
+Article.propTypes = {
+    new: PropTypes.object
+};
+
+function ArticleEntitle({new}) {
+    return (
+        <div>
+            <Rank rank={new.rank} move={new.move}/>
+            <Title title={new.title}/>
+            <Source src={new.src}/>
+        </div>
+    );
+};
+
+ArticleEntitle.propTypes = {
+    new.object
+};
+
+function Rank({rank}) {
+    return (
+        <div>
+            <span>
+                {rank}.
+            </span>
+            <i className={`${move ? fa-icon : fa-another}`}></i>
+        </div>
+    );
+};
+
+Rank.propTypes = {
+    rank: Proptypes
+};
+
+function Title({title}) {
+    return (
+        <h2>
+            {title}
+        </h2>
+    );
+};
+
+Title.propTypes = {
+    title: Propotypes.string
+}
+
+function Source({src}) {
+
+    return (
+        <p>
+        
+            </p>
+    )
+}
+
 ReactDOM.render(<HackerNews/>, document.getElementById('root'));
