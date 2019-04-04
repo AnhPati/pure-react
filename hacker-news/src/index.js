@@ -8,7 +8,7 @@ function HackerNews({news, nav}) {
     return (
         <div>
             <Header nav={nav}/>
-            {/*<ListArticles news={news}/>*/}
+            <ListArticles news={news}/>
         </div>
     );
 };
@@ -186,13 +186,13 @@ ArticleEntitle.propTypes = {
     newItem: PropTypes.object
 };
 
-function Rank({rank}) {
+function Rank({rank, move}) {
     return (
         <div>
             <span>
                 {rank}.
             </span>
-            <i className={`${move ? fa-icon : fa-another}`}></i>
+            {/*<i className={`${move ? fa-icon : fa-another}`}></i>*/}
         </div>
     );
 };
@@ -333,4 +333,37 @@ const SaveButton = () => (
     <a href="#">save to pocket</a>
 );
 
-ReactDOM.render(<HackerNews nav={navConfig}/>, document.getElementById('root'));
+var newsData = [
+    {
+        id: 1,
+        rank: 1,
+        move: true,
+        title: "Coucou",
+        score: 1203,
+        author: "Jeff",
+        date: "2016-07-11 21:24:00",
+        comments: 10,
+    },
+    {
+        id: 2,
+        rank: 1,
+        move: true,
+        title: "Coucou",
+        score: 1203,
+        author: "Jeff",
+        date: "2016-07-11 21:24:00",
+        comments: 10,
+    },
+    {
+        id: 3,
+        rank: 1,
+        move: true,
+        title: "Coucou",
+        score: 1203,
+        author: "Jeff",
+        date: "2016-07-11 21:24:00",
+        comments: 10,
+    },
+];
+
+ReactDOM.render(<HackerNews news={newsData} nav={navConfig}/>, document.getElementById('root'));
