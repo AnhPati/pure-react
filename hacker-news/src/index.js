@@ -101,8 +101,8 @@ NavItem.propTypes = {
 
 function ListArticles({news}) {
     <ul>
-        {news.map(new => (
-            <Article key={new.id} new={new}/>
+        {news.map(newItem => (
+            <Article key={newItem.id} newItem={newItem}/>
         ))}
     </ul>
 };
@@ -111,31 +111,31 @@ ListArticles.propTypes = {
     news: PropTypes.array
 };
 
-function Article({new}) {
+function Article({newItem}) {
     return (
         <div>
-            <ArticleEntitle new={new}/>
-            <ArticleInfo info={new}/>
+            <ArticleEntitle newItem={newItem}/>
+            <ArticleInfo info={newItem}/>
         </div>
     );
 };
 
 Article.propTypes = {
-    new: PropTypes.object
+    newItem: PropTypes.object
 };
 
-function ArticleEntitle({new}) {
+function ArticleEntitle({newItem}) {
     return (
         <div>
-            <Rank rank={new.rank} move={new.move}/>
-            <Title title={new.title}/>
-            <Source src={new.src}/>
+            <Rank rank={newItem.rank} move={newItem.move}/>
+            <Title title={newItem.title}/>
+            <Source src={newItem.src}/>
         </div>
     );
 };
 
 ArticleEntitle.propTypes = {
-    new.object
+    newItem.object
 };
 
 function Rank({rank}) {
