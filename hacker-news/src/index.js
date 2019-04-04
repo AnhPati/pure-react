@@ -8,7 +8,7 @@ function HackerNews({news, nav}) {
     return (
         <div>
             <Header nav={nav}/>
-            <ListArticles news={news}/>
+            {/*<ListArticles news={news}/>*/}
         </div>
     );
 };
@@ -82,7 +82,7 @@ function NavContainer({menu}) {
 };
 
 NavContainer.propTypes = {
-    nmenu: PropTypes.array
+    menu: PropTypes.array
 }
 
 function NavItem({item}) {
@@ -99,12 +99,60 @@ NavItem.propTypes = {
     item: PropTypes.object
 };
 
+var navConfig = {
+    menu: [
+        {
+            id: 1,
+            name: "new",
+            href: "#"
+        },
+        {
+            id: 2,
+            name: "threads",
+            href: "#"
+        },
+        {
+            id: 3,
+            name: "comments",
+            href: "#"
+        },
+        {
+            id: 4,
+            name: "show",
+            href: "#"
+        },
+        {
+            id: 5,
+            name: "ask",
+            href: "#"
+        },
+        {
+            id: 6,
+            name: "jobs",
+            href: "#"
+        },
+        {
+            id: 7,
+            name: "submit",
+            href: "#"
+        }
+    ],
+    title: "Hacker News",
+    img: {
+        alt: "logo",
+        src: ""
+    }
+}
+
+
 function ListArticles({news}) {
-    <ul>
-        {news.map(newItem => (
-            <Article key={newItem.id} newItem={newItem}/>
-        ))}
-    </ul>
+    return (
+        <ul>
+            {news.map(newItem => (
+                <Article key={newItem.id} newItem={newItem}/>
+            ))}
+        </ul>
+    )
 };
 
 ListArticles.propTypes = {
@@ -135,7 +183,7 @@ function ArticleEntitle({newItem}) {
 };
 
 ArticleEntitle.propTypes = {
-    newItem.object
+    newItem: PropTypes.object
 };
 
 function Rank({rank}) {
@@ -150,7 +198,7 @@ function Rank({rank}) {
 };
 
 Rank.propTypes = {
-    rank: Proptypes
+    rank: PropTypes
 };
 
 function Title({title}) {
@@ -162,7 +210,7 @@ function Title({title}) {
 };
 
 Title.propTypes = {
-    title: Propotypes.string
+    title: PropTypes.string
 };
 
 function Source({src}) {
@@ -206,7 +254,7 @@ function ArticleInfo({info}) {
     );
 };
 
-ArticleInfo.PropTypes = {
+ArticleInfo.propTypes = {
     info: PropTypes.object
 };
 
@@ -261,7 +309,7 @@ const Flag = () => (
     <a href="#"><p>flag</p></a>
 );
 
-const Hide () => (
+const Hide = () => (
     <a href="#"><p>hide</p></a>
 );
 
@@ -277,13 +325,12 @@ CommentsCount.propTypes = {
     number: PropTypes.number
 };
 
-const InstaButton () => (
+const InstaButton = () => (
     <a href="#">instapaper</a>
 );
 
-const SaveButton () => (
+const SaveButton = () => (
     <a href="#">save to pocket</a>
 );
 
-
-ReactDOM.render(<HackerNews/>, document.getElementById('root'));
+ReactDOM.render(<HackerNews nav={navConfig}/>, document.getElementById('root'));
