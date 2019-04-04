@@ -20,7 +20,7 @@ HackerNews.propTypes = {
 
 function Header({nav}) {
     return ( 
-        <header>
+        <header className="headerContainer u-flexBox">
             <Entitle nav={nav}/>
             <NavContainer menu={nav.menu}/>
         </header>
@@ -33,7 +33,7 @@ Header.propTypes = {
 
 function Entitle({nav}) {
     return (
-        <div>
+        <div className="u-flexBox">
             <Logo img={nav.img}/>
             <MainTitle title={nav.title}/>
         </div>
@@ -46,8 +46,9 @@ Entitle.propTypes = {
 
 function Logo({img}) {
     return (
-        <div>
-            <img alt={img.alt} src={img.src}/>
+        < div className = "title-xl logoCSS u-flexBox centered u-marginRight" >
+            <span>Y</span>
+            {/*<img alt={img.alt} src={img.src}/>*/} 
         </div>
     );
 };
@@ -62,7 +63,7 @@ Logo.propTypes = {
 function MainTitle({title}) {
     return (
         <div>
-            <h1>{title}</h1>
+            <h1 className="title-xl u-marginCentered">{title}</h1>
         </div>
     );
 };
@@ -73,7 +74,7 @@ MainTitle.propTypes = {
 
 function NavContainer({menu}) {
     return (
-        <ul>
+        <ul className="u-flexBox c-listBlank">
             {menu.map(item => (
                 <NavItem key={item.id} item={item}/>
             ))}  
@@ -87,8 +88,8 @@ NavContainer.propTypes = {
 
 function NavItem({item}) {
     return (
-        <li>
-            <a href={item.href}>
+        < li class = "navItem title-lg u-marginCentered" >
+            <a href={item.href} className="c-linkBlank">
                 <span>{item.name}</span>
             </a>
         </li>

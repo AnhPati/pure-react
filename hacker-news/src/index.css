@@ -1,14 +1,78 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*===[[BASE]]====*/
+
+/*===[[LAYOUTS]]====*/
+
+/*===[[UTILITARY]]====*/
+.u-flexBox {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.u-flexBox.centered {
+  justify-content: center;
+  align-items: center;
 }
+
+.u-flexBox.column {
+  flex-direction: column;
+}
+
+.u-marginNone {
+  margin: 0!important;
+}
+
+.u-marginRight {
+  margin-right: 1rem;
+}
+
+.u-marginCentered {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+/*===[[TYPOGRAPHY]]====*/
+
+.title-xl {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.title-lg {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+/*===[[COMPONENT]]====*/
+
+.c-listBlank {
+  list-style: none;
+  padding-inline-start: 0;
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+.c-linkBlank {
+  text-decoration: none;
+  color: #000000;
+}
+
+/*===[[HEADER]]====*/
+
+.headerContainer {
+  width: 100%;
+  position: fixed;
+  background-color: rgb(211, 108, 12)
+}
+
+.logoCSS {
+  width: 3rem;
+  height: 3rem;
+  border: double 0.3rem #FFF;
+  color: #FFF;
+}
+
+.navItem {
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  border-right: solid 0.2rem #000000;
+}
+
+/*===[[MEDIA QUERIES]]====*/
