@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import moment from "moment";
+import './index.css';
 
 function HackerNews({news, nav}) {
     return (
@@ -161,15 +163,127 @@ function Title({title}) {
 
 Title.propTypes = {
     title: Propotypes.string
-}
+};
 
 function Source({src}) {
 
     return (
         <p>
-        
+            ({src})
+        </p>
+    );
+};
+
+Source.propTypes = {
+    src: PropTypes.string
+};
+
+function ArticleInfo({info}) {
+    return (
+        <ul>
+            <li>
+                <ScoreBox score={info.score} author={info.author}/>
+            </li>
+            <li>
+                <Time time={info.date}/>
+            </li>
+            <li>
+                <Flag/>
+            </li>
+            <li>
+                <Hide/>
+            </li>
+            <li>
+                <CommentsCount number={info.comments}/>
+            </li>
+            <li>
+                <InstaButton/>
+            </li>
+            <li>
+                <SaveButton/>
+            </li>
+        </ul>
+    );
+};
+
+ArticleInfo.PropTypes = {
+    info: PropTypes.object
+};
+
+function ScoreBox({score, author}) {
+    return (
+        <div>
+            <p>
+                <Score score={score}/>
+                <Author author={author}/>
             </p>
-    )
-}
+        </div>
+    );
+};
+
+ScoreBox.propTypes = {
+    score: PropTypes.number,
+    author: PropTypes.string
+};
+
+function Score({score}) {
+    return (
+        <span>{score} points</span>
+    );
+};
+
+Score.propTypes = {
+    score: PropTypes.number
+};
+
+function Author({author}) {
+    return (
+        <span>by {author}</span>
+    );
+};
+
+Author.propTypes = {
+    author: PropTypes.string
+};
+
+const Time = ({time}) => {
+    const timeString = moment(time).fromNow();
+    return (
+        <span className="time">{timeString}</span>
+    );
+};
+
+Time.prototypes = {
+    time: PropTypes.string
+};
+
+const Flag = () => (
+    <a href="#"><p>flag</p></a>
+);
+
+const Hide () => (
+    <a href="#"><p>hide</p></a>
+);
+
+function CommentsCount({number}) {
+    return (
+        <div>
+            <span>{number} comments</span>
+        </div>
+    );
+};
+
+CommentsCount.propTypes = {
+    number: PropTypes.number
+};
+
+const InstaButton () => (
+    <a href="#">instapaper</a>
+);
+
+const SaveButton () => (
+    <a href="#">save to pocket</a>
+);
+
 
 ReactDOM.render(<HackerNews/>, document.getElementById('root'));
