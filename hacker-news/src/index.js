@@ -148,7 +148,7 @@ var navConfig = {
 
 function ListArticles({news}) {
     return (
-        <ul>
+        < ul className = "listArticles c-listBlank" >
             {news.map(newItem => (
                 <Article key={newItem.id} newItem={newItem}/>
             ))}
@@ -175,7 +175,7 @@ Article.propTypes = {
 
 function ArticleEntitle({newItem}) {
     return (
-        <div>
+        <div className="u-flexBox">
             <Rank rank={newItem.rank} move={newItem.move}/>
             <Title title={newItem.title}/>
             <Source src={newItem.src}/>
@@ -204,7 +204,7 @@ Rank.propTypes = {
 
 function Title({title}) {
     return (
-        <h2>
+        <h2 className="u-marginNone">
             {title}
         </h2>
     );
@@ -217,7 +217,7 @@ Title.propTypes = {
 function Source({src}) {
 
     return (
-        <p>
+        <p className="u-marginNone">
             ({src})
         </p>
     );
@@ -229,7 +229,7 @@ Source.propTypes = {
 
 function ArticleInfo({info}) {
     return (
-        <ul>
+        <ul class="u-flexBox c-listBlank">
             <li>
                 <ScoreBox score={info.score} author={info.author}/>
             </li>
@@ -307,17 +307,17 @@ Time.prototypes = {
 };
 
 const Flag = () => (
-    <a href="#"><p>flag</p></a>
+    <a href="#" className="c-linkBlank"><p>flag</p></a>
 );
 
 const Hide = () => (
-    <a href="#"><p>hide</p></a>
+    <a href="#" className="c-linkBlank"><p>hide</p></a>
 );
 
 function CommentsCount({number}) {
     return (
         <div>
-            <span>{number} comments</span>
+            <span>{number} {number > 1 ? "comments" : "comment"}</span>
         </div>
     );
 };
@@ -327,11 +327,11 @@ CommentsCount.propTypes = {
 };
 
 const InstaButton = () => (
-    <a href="#">instapaper</a>
+    <a href="#" className="c-linkBlank">instapaper</a>
 );
 
 const SaveButton = () => (
-    <a href="#">save to pocket</a>
+    <a href="#" className="c-linkBlank">save to pocket</a>
 );
 
 var newsData = [
@@ -339,32 +339,112 @@ var newsData = [
         id: 1,
         rank: 1,
         move: true,
-        title: "Coucou",
-        score: 1203,
-        author: "Jeff",
-        date: "2016-07-11 21:24:00",
-        comments: 10,
+        title: "Why I'm Suing the US Government",
+        src: "(bunniestudios.com)",
+        score: 1346,
+        author: "ivank",
+        date: "2019-04-07 18:37:20",
+        comments: 257,
     },
     {
         id: 2,
-        rank: 1,
+        rank: 2,
         move: true,
-        title: "Coucou",
-        score: 1203,
-        author: "Jeff",
-        date: "2016-07-11 21:24:00",
-        comments: 10,
+        title: "Zenzizenziznezic",
+        src: "(wikipedia.org)",
+        score: 140,
+        author: "vinchuco",
+        date: "2019-04-08 02:37:20",
+        comments: 140,
     },
     {
         id: 3,
-        rank: 1,
+        rank: 3,
         move: true,
-        title: "Coucou",
-        score: 1203,
-        author: "Jeff",
-        date: "2016-07-11 21:24:00",
-        comments: 10,
+        title: "A practical security guide for web developers",
+        src: "(bunniestudios.com)",
+        score: 72,
+        author: "zianwar",
+        date: "2019-04-08 01:37:20",
+        comments: 6,
     },
+    {
+        id: 4,
+        rank: 4,
+        move: true,
+        title: "I got arrested in Kazakhstran and represented myself in court",
+        src: "(bunniestudios.com)",
+        score: 370,
+        author: "drpp",
+        date: "2019-04-07 21:37:20",
+        comments: 79,
+    },
+    {
+        id: 5,
+        rank: 5,
+        move: true,
+        title: "Sculpture of Housing Prices Ripping San Francisco Apart",
+        src: "(dougmccune.com)",
+        score: 254,
+        author: "dougmccune",
+        date: "2019-04-07 21:37:20",
+        comments: 149,
+    },
+    {
+        id: 6,
+        rank: 6,
+        move: true,
+        title: "Practical Guide to Bare Metal C++",
+        src: "(gitbooks.io)",
+        score: 175,
+        author: "adamnemecek",
+        date: "2019-04-07 21:37:20",
+        comments: 31,
+    },
+    {
+        id: 7,
+        rank: 7,
+        move: true,
+        title: "Superformula",
+        src: "(wikipedia.org)",
+        score: 77,
+        author: "GuiA",
+        date: "2019-04-06 23:37:20",
+        comments: 17,
+    },
+    {
+        id: 8,
+        rank: 8,
+        move: true,
+        title: "Police asked 3D printing lab to recreate a dead man's fingers to unlock phone",
+        src: "(fusion.net)",
+        score: 109,
+        author: "theandrewballey",
+        date: "2019-04-06 18:37:20",
+        comments: 57,
+    },
+    {
+        id: 9,
+        rank: 9,
+        move: true,
+        title: "Edward Snowden's New Research Aims to Keep Smartphones from Betraying Owners",
+        src: "(theintercept.com)",
+        score: 190,
+        author: "Jeff",
+        date: "2019-04-07 03:37:20",
+        comments: 69,
+    },
+    {
+        id: 10,
+        rank: 10,
+        move: true,
+        title: "Assessing IBM's POWER8, Part 1 : A Low Level Look at Little Endian",
+        src: "(anandtech.com)",
+        score: 24,
+        author: "tambourine_man",
+        date: "2019-04-07 14:37:20",
+        comments: 1,
+    }
 ];
 
 ReactDOM.render(<HackerNews news={newsData} nav={navConfig}/>, document.getElementById('root'));
