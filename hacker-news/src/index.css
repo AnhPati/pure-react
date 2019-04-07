@@ -29,16 +29,25 @@
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
+
+.u-paddingRight {
+  padding-right: 0.4rem;
+}
 /*===[[TYPOGRAPHY]]====*/
 
 .title-xl {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 
 .title-lg {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 500;
+}
+
+.paragraph-md {
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 /*===[[COMPONENT]]====*/
 
@@ -79,6 +88,20 @@
 
 .listArticles {
   padding-top: 3.593rem;
+  background-color: #e9e4d4;
+}
+
+.articleItem {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+.articleEntitle {
+  align-items: baseline;
+}
+
+.articleText-color {
+  color: #7e7d7d;
 }
 
 /*===[[MEDIA QUERIES]]====*/

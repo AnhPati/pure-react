@@ -162,7 +162,7 @@ ListArticles.propTypes = {
 
 function Article({newItem}) {
     return (
-        <div>
+        <div className="articleItem">
             <ArticleEntitle newItem={newItem}/>
             <ArticleInfo info={newItem}/>
         </div>
@@ -175,7 +175,7 @@ Article.propTypes = {
 
 function ArticleEntitle({newItem}) {
     return (
-        <div className="u-flexBox">
+        <div className="u-flexBox articleEntitle">
             <Rank rank={newItem.rank} move={newItem.move}/>
             <Title title={newItem.title}/>
             <Source src={newItem.src}/>
@@ -189,11 +189,13 @@ ArticleEntitle.propTypes = {
 
 function Rank({rank, move}) {
     return (
-        <div>
-            <span>
+        <div className="articleText-color u-paddingRight">
+            <span className="title-lg u-paddingRight">
                 {rank}.
             </span>
-            {/*<i className={`${move ? fa-icon : fa-another}`}></i>*/}
+            <span>
+                {<i className={`${move ? 'fas fa-caret-up' : 'fas fa-caret-down'}`}></i>}
+            </span>
         </div>
     );
 };
@@ -204,7 +206,7 @@ Rank.propTypes = {
 
 function Title({title}) {
     return (
-        <h2 className="u-marginNone">
+        <h2 className="title-lg u-marginNone u-paddingRight">
             {title}
         </h2>
     );
@@ -217,7 +219,7 @@ Title.propTypes = {
 function Source({src}) {
 
     return (
-        <p className="u-marginNone">
+        <p className="paragraph-md u-marginNone">
             ({src})
         </p>
     );
@@ -229,7 +231,7 @@ Source.propTypes = {
 
 function ArticleInfo({info}) {
     return (
-        <ul class="u-flexBox c-listBlank">
+        <ul class="u-flexBox c-listBlank paragraph-md articleText-color">
             <li>
                 <ScoreBox score={info.score} author={info.author}/>
             </li>
@@ -262,7 +264,7 @@ ArticleInfo.propTypes = {
 function ScoreBox({score, author}) {
     return (
         <div>
-            <p>
+            <p className="u-marginNone u-paddingRight">
                 <Score score={score}/>
                 <Author author={author}/>
             </p>
@@ -277,7 +279,7 @@ ScoreBox.propTypes = {
 
 function Score({score}) {
     return (
-        <span>{score} points</span>
+        <span className="u-paddingRight">{score} points</span>
     );
 };
 
@@ -287,7 +289,7 @@ Score.propTypes = {
 
 function Author({author}) {
     return (
-        <span>by {author}</span>
+        <span className="u-paddingRight">by {author}</span>
     );
 };
 
@@ -298,7 +300,7 @@ Author.propTypes = {
 const Time = ({time}) => {
     const timeString = moment(time).fromNow();
     return (
-        <span className="time">{timeString}</span>
+        <span className="time u-paddingRight">{timeString}</span>
     );
 };
 
@@ -307,17 +309,17 @@ Time.prototypes = {
 };
 
 const Flag = () => (
-    <a href="#" className="c-linkBlank"><p>flag</p></a>
+    <a href="#" className="u-flexBox c-linkBlank u-paddingRight"><p className="u-marginNone articleText-color">flag</p></a>
 );
 
 const Hide = () => (
-    <a href="#" className="c-linkBlank"><p>hide</p></a>
+    <a href="#" className="u-flexBox c-linkBlank u-paddingRight"><p className="u-marginNone articleText-color">hide</p></a>
 );
 
 function CommentsCount({number}) {
     return (
         <div>
-            <span>{number} {number > 1 ? "comments" : "comment"}</span>
+            <span className="u-paddingRight">{number} {number > 1 ? "comments" : "comment"}</span>
         </div>
     );
 };
@@ -327,11 +329,11 @@ CommentsCount.propTypes = {
 };
 
 const InstaButton = () => (
-    <a href="#" className="c-linkBlank">instapaper</a>
+    <a href="#" className="c-linkBlank articleText-color u-paddingRight">instapaper</a>
 );
 
 const SaveButton = () => (
-    <a href="#" className="c-linkBlank">save to pocket</a>
+    <a href="#" className="c-linkBlank articleText-color">save to pocket</a>
 );
 
 var newsData = [
@@ -340,7 +342,7 @@ var newsData = [
         rank: 1,
         move: true,
         title: "Why I'm Suing the US Government",
-        src: "(bunniestudios.com)",
+        src: "bunniestudios.com",
         score: 1346,
         author: "ivank",
         date: "2019-04-07 18:37:20",
@@ -351,7 +353,7 @@ var newsData = [
         rank: 2,
         move: true,
         title: "Zenzizenziznezic",
-        src: "(wikipedia.org)",
+        src: "wikipedia.org",
         score: 140,
         author: "vinchuco",
         date: "2019-04-08 02:37:20",
@@ -362,7 +364,7 @@ var newsData = [
         rank: 3,
         move: true,
         title: "A practical security guide for web developers",
-        src: "(bunniestudios.com)",
+        src: "github.com",
         score: 72,
         author: "zianwar",
         date: "2019-04-08 01:37:20",
@@ -373,7 +375,7 @@ var newsData = [
         rank: 4,
         move: true,
         title: "I got arrested in Kazakhstran and represented myself in court",
-        src: "(bunniestudios.com)",
+        src: "medium.com",
         score: 370,
         author: "drpp",
         date: "2019-04-07 21:37:20",
@@ -384,7 +386,7 @@ var newsData = [
         rank: 5,
         move: true,
         title: "Sculpture of Housing Prices Ripping San Francisco Apart",
-        src: "(dougmccune.com)",
+        src: "dougmccune.com",
         score: 254,
         author: "dougmccune",
         date: "2019-04-07 21:37:20",
@@ -395,7 +397,7 @@ var newsData = [
         rank: 6,
         move: true,
         title: "Practical Guide to Bare Metal C++",
-        src: "(gitbooks.io)",
+        src: "gitbooks.io",
         score: 175,
         author: "adamnemecek",
         date: "2019-04-07 21:37:20",
@@ -406,7 +408,7 @@ var newsData = [
         rank: 7,
         move: true,
         title: "Superformula",
-        src: "(wikipedia.org)",
+        src: "wikipedia.org",
         score: 77,
         author: "GuiA",
         date: "2019-04-06 23:37:20",
@@ -417,7 +419,7 @@ var newsData = [
         rank: 8,
         move: true,
         title: "Police asked 3D printing lab to recreate a dead man's fingers to unlock phone",
-        src: "(fusion.net)",
+        src: "fusion.net",
         score: 109,
         author: "theandrewballey",
         date: "2019-04-06 18:37:20",
@@ -428,7 +430,7 @@ var newsData = [
         rank: 9,
         move: true,
         title: "Edward Snowden's New Research Aims to Keep Smartphones from Betraying Owners",
-        src: "(theintercept.com)",
+        src: "theintercept.com",
         score: 190,
         author: "Jeff",
         date: "2019-04-07 03:37:20",
@@ -439,7 +441,7 @@ var newsData = [
         rank: 10,
         move: true,
         title: "Assessing IBM's POWER8, Part 1 : A Low Level Look at Little Endian",
-        src: "(anandtech.com)",
+        src: "anandtech.com",
         score: 24,
         author: "tambourine_man",
         date: "2019-04-07 14:37:20",
