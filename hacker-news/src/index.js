@@ -219,7 +219,7 @@ Title.propTypes = {
 function Source({src}) {
 
     return (
-        <p className="paragraph-md u-marginNone">
+        <p className="articleText-color paragraph-md u-marginNone">
             ({src})
         </p>
     );
@@ -300,7 +300,7 @@ Author.propTypes = {
 const Time = ({time}) => {
     const timeString = moment(time).fromNow();
     return (
-        <span className="time u-paddingRight">{timeString}</span>
+        <span className="time u-paddingRight articleInfo">{timeString}</span>
     );
 };
 
@@ -309,17 +309,17 @@ Time.prototypes = {
 };
 
 const Flag = () => (
-    <a href="#" className="u-flexBox c-linkBlank u-paddingRight"><p className="u-marginNone articleText-color">flag</p></a>
+    <a href="#" className="u-flexBox c-linkBlank u-paddingRight articleInfo"><p className="u-marginNone articleText-color">flag</p></a>
 );
 
 const Hide = () => (
-    <a href="#" className="u-flexBox c-linkBlank u-paddingRight"><p className="u-marginNone articleText-color">hide</p></a>
+    <a href="#" className="u-flexBox c-linkBlank u-paddingRight articleInfo"><p className="u-marginNone articleText-color">hide</p></a>
 );
 
 function CommentsCount({number}) {
     return (
         <div>
-            <span className="u-paddingRight">{number} {number > 1 ? "comments" : "comment"}</span>
+            <span className="u-paddingRight articleInfo">{number} {number > 1 ? "comments" : "comment"}</span>
         </div>
     );
 };
@@ -329,7 +329,7 @@ CommentsCount.propTypes = {
 };
 
 const InstaButton = () => (
-    <a href="#" className="c-linkBlank articleText-color u-paddingRight">instapaper</a>
+    <a href="#" className="c-linkBlank articleInfo articleText-color u-paddingRight">instapaper</a>
 );
 
 const SaveButton = () => (

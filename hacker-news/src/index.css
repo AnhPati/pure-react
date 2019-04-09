@@ -87,8 +87,9 @@
 /*===[[LIST ARTICLES]]====*/
 
 .listArticles {
-  padding-top: 3.593rem;
+  padding-top: ;
   background-color: #e9e4d4;
+  padding: 4.393rem 1rem 1rem 1rem;
 }
 
 .articleItem {
@@ -102,6 +103,11 @@
 
 .articleText-color {
   color: #7e7d7d;
+}
+
+.articleInfo {
+  border-right: solid 0.1rem #7e7d7d;
+  margin-right: 0.4rem;
 }
 
 /*===[[MEDIA QUERIES]]====*/
