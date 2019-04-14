@@ -3,6 +3,166 @@ import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
 import "./index.css";
 
+function MainContainer(setCards) {
+    return (
+        <div>
+            <Header category={setCards.category}/>
+            <ListCards/>
+        </div>
+    );
+};
+
+MainContainer.propTypes = {
+    setCards: PropTypes.object.isRequired
+};
+
+var cardsData = {
+    category: {
+        name: "Cow explorer",
+        logo: "",
+        boardsNumber: 43,
+        pinsNumber: 12,
+        likesNumber: 1234,
+        followersNumber: 304,
+        followingNumber: 210,
+    },
+    cards: [
+        {
+            title: "Une vache tout ce qu'il y a de plus banal",
+            category: "Ruminant",
+            images: [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbii2cE-mppOkYG1hfBf17qwdtvCTcSz6_r23WvymzduB3pYxL",
+                "https://www.avenuedesanges.com/media/catalog/product/cache/29/image/9df78eab33525d08d6e5fb8d27136e95/l/o/lola-medium-gris-clair---noukies.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQzRBjtFVDTdDAsxsyXr0Xq2fzWHgUgEbvPxHVTJOeHXgYSDhjZA",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTONFa8S_WtxGXUuecp0SIiwsdfeH507WSezACsCXY9ef5vcqN-"
+            ],
+            score: 4.444,
+            follow: false
+        },
+        {
+            title: "Une vache tout ce qu'il y a de plus banal",
+            category: "Ruminant",
+            images: [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbii2cE-mppOkYG1hfBf17qwdtvCTcSz6_r23WvymzduB3pYxL",
+                "https://www.avenuedesanges.com/media/catalog/product/cache/29/image/9df78eab33525d08d6e5fb8d27136e95/l/o/lola-medium-gris-clair---noukies.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQzRBjtFVDTdDAsxsyXr0Xq2fzWHgUgEbvPxHVTJOeHXgYSDhjZA",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTONFa8S_WtxGXUuecp0SIiwsdfeH507WSezACsCXY9ef5vcqN-"
+            ],
+            score: 4.444,
+            follow: false
+        },
+        {
+            title: "Une vache tout ce qu'il y a de plus banal",
+            category: "Ruminant",
+            images: [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbii2cE-mppOkYG1hfBf17qwdtvCTcSz6_r23WvymzduB3pYxL",
+                "https://www.avenuedesanges.com/media/catalog/product/cache/29/image/9df78eab33525d08d6e5fb8d27136e95/l/o/lola-medium-gris-clair---noukies.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQzRBjtFVDTdDAsxsyXr0Xq2fzWHgUgEbvPxHVTJOeHXgYSDhjZA",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTONFa8S_WtxGXUuecp0SIiwsdfeH507WSezACsCXY9ef5vcqN-"
+            ],
+            score: 4.444,
+            follow: false
+        },
+        {
+            title: "Une vache tout ce qu'il y a de plus banal",
+            category: "Ruminant",
+            images: [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbii2cE-mppOkYG1hfBf17qwdtvCTcSz6_r23WvymzduB3pYxL",
+                "https://www.avenuedesanges.com/media/catalog/product/cache/29/image/9df78eab33525d08d6e5fb8d27136e95/l/o/lola-medium-gris-clair---noukies.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQzRBjtFVDTdDAsxsyXr0Xq2fzWHgUgEbvPxHVTJOeHXgYSDhjZA",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTONFa8S_WtxGXUuecp0SIiwsdfeH507WSezACsCXY9ef5vcqN-"
+            ],
+            score: 4.444,
+            follow: false
+        },
+        {
+            title: "Une vache tout ce qu'il y a de plus banal",
+            category: "Ruminant",
+            images: [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbii2cE-mppOkYG1hfBf17qwdtvCTcSz6_r23WvymzduB3pYxL",
+                "https://www.avenuedesanges.com/media/catalog/product/cache/29/image/9df78eab33525d08d6e5fb8d27136e95/l/o/lola-medium-gris-clair---noukies.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQzRBjtFVDTdDAsxsyXr0Xq2fzWHgUgEbvPxHVTJOeHXgYSDhjZA",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTONFa8S_WtxGXUuecp0SIiwsdfeH507WSezACsCXY9ef5vcqN-"
+            ],
+            score: 4.444,
+            follow: false
+        },
+        {
+            title: "Une vache tout ce qu'il y a de plus banal",
+            category: "Ruminant",
+            images: [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbii2cE-mppOkYG1hfBf17qwdtvCTcSz6_r23WvymzduB3pYxL",
+                "https://www.avenuedesanges.com/media/catalog/product/cache/29/image/9df78eab33525d08d6e5fb8d27136e95/l/o/lola-medium-gris-clair---noukies.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQzRBjtFVDTdDAsxsyXr0Xq2fzWHgUgEbvPxHVTJOeHXgYSDhjZA",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTONFa8S_WtxGXUuecp0SIiwsdfeH507WSezACsCXY9ef5vcqN-"
+            ],
+            score: 4.444,
+            follow: false
+        },
+        {
+            title: "Une vache tout ce qu'il y a de plus banal",
+            category: "Ruminant",
+            images: [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbii2cE-mppOkYG1hfBf17qwdtvCTcSz6_r23WvymzduB3pYxL",
+                "https://www.avenuedesanges.com/media/catalog/product/cache/29/image/9df78eab33525d08d6e5fb8d27136e95/l/o/lola-medium-gris-clair---noukies.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQzRBjtFVDTdDAsxsyXr0Xq2fzWHgUgEbvPxHVTJOeHXgYSDhjZA",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTONFa8S_WtxGXUuecp0SIiwsdfeH507WSezACsCXY9ef5vcqN-"
+            ],
+            score: 4.444,
+            follow: false
+        },
+    ] 
+};
+
+function Header({category}) {
+    return (
+        <header>
+            <div>
+                <img src={category.logo} alt={category.name}/>
+                <h1>{category.name}</h1>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <p>{category.boardsNumber}</p>
+                        <h5>Boards</h5>
+                    </li>
+                    <li>
+                        <p>{category.pinsNumber}</p>
+                        <h5>Pins</h5>
+                    </li>
+                    <li>
+                        <p>{category.likesNumber}</p>
+                        <h5>Likes</h5>
+                    </li>
+                    <li>
+                        <p>{category.followersNumber}</p>
+                        <h5>Followers</h5>
+                    </li>
+                    <li>
+                        <p>{category.followingNumber}</p>
+                        <h5>Following</h5>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    );
+};
+
+Header.propTypes = {
+    category: PropTypes.object.isRequired
+};
+
+function ListCards(cards) {
+    return (
+        <div>
+            {cards.map(card => (
+                <Card key={card.id} card={card}/>
+            ))}
+        </div>
+    );
+};
+
 function Card({card}) {
     return (
         <div className="card col-md-4 u-paddingNone">
@@ -19,7 +179,7 @@ Card.propTypes = {
     card: PropTypes.object
 };
 
-var cardData = {
+var cardsData = {
     title: "Une vache tout ce qu'il y a de plus banal",
     category: "Ruminant",
     images : [
