@@ -3,11 +3,11 @@ import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
 import "./index.css";
 
-function MainContainer(setCards) {
+function MainContainer({setCards}) {
     return (
         <div>
             <Header category={setCards.category}/>
-            <ListCards/>
+            <ListCards cards={setCards.cards}/>
         </div>
     );
 };
@@ -19,7 +19,7 @@ MainContainer.propTypes = {
 var cardsData = {
     category: {
         name: "Cow explorer",
-        logo: "",
+        logo: "https://wordassociations.net/image/200x/svg_to_png/lemmling_Cartoon_cow.png",
         boardsNumber: 43,
         pinsNumber: 12,
         likesNumber: 1234,
@@ -28,6 +28,7 @@ var cardsData = {
     },
     cards: [
         {
+            id: 1,
             title: "Une vache tout ce qu'il y a de plus banal",
             category: "Ruminant",
             images: [
@@ -40,6 +41,7 @@ var cardsData = {
             follow: false
         },
         {
+            id: 2,
             title: "Une vache tout ce qu'il y a de plus banal",
             category: "Ruminant",
             images: [
@@ -52,6 +54,7 @@ var cardsData = {
             follow: false
         },
         {
+            id: 3,
             title: "Une vache tout ce qu'il y a de plus banal",
             category: "Ruminant",
             images: [
@@ -64,6 +67,7 @@ var cardsData = {
             follow: false
         },
         {
+            id: 4,
             title: "Une vache tout ce qu'il y a de plus banal",
             category: "Ruminant",
             images: [
@@ -76,6 +80,7 @@ var cardsData = {
             follow: false
         },
         {
+            id: 5,
             title: "Une vache tout ce qu'il y a de plus banal",
             category: "Ruminant",
             images: [
@@ -88,6 +93,7 @@ var cardsData = {
             follow: false
         },
         {
+            id: 6,
             title: "Une vache tout ce qu'il y a de plus banal",
             category: "Ruminant",
             images: [
@@ -100,6 +106,7 @@ var cardsData = {
             follow: false
         },
         {
+            id: 7,
             title: "Une vache tout ce qu'il y a de plus banal",
             category: "Ruminant",
             images: [
@@ -153,7 +160,7 @@ Header.propTypes = {
     category: PropTypes.object.isRequired
 };
 
-function ListCards(cards) {
+function ListCards({cards}) {
     return (
         <div>
             {cards.map(card => (
@@ -162,6 +169,10 @@ function ListCards(cards) {
         </div>
     );
 };
+
+ListCards.propTypes = {
+    cards: PropTypes.array.isRequired
+}
 
 function Card({card}) {
     return (
@@ -179,7 +190,7 @@ Card.propTypes = {
     card: PropTypes.object
 };
 
-var cardsData = {
+var cardData = {
     title: "Une vache tout ce qu'il y a de plus banal",
     category: "Ruminant",
     images : [
@@ -243,4 +254,4 @@ FollowButton.propTypes = {
     url: PropTypes.string.isRequired
 };
 
-ReactDOM.render(<Card card={cardData}/>, document.getElementById("root"));
+ReactDOM.render(<MainContainer setCards={cardsData}/>, document.getElementById("root"));
