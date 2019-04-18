@@ -16,6 +16,10 @@
   margin-bottom: 0.2rem;
 }
 
+.headerLogo {
+  width: 7rem;
+}
+
 .c-followBtn {
   color: #8d2626!important;
 }

@@ -5,7 +5,7 @@ import "./index.css";
 
 function MainContainer({setCards}) {
     return (
-        <div>
+        <div className="container">
             <Header category={setCards.category}/>
             <ListCards cards={setCards.cards}/>
         </div>
@@ -123,9 +123,11 @@ var cardsData = {
 
 function Header({category}) {
     return (
-        <header>
-            <div>
-                <img src={category.logo} alt={category.name}/>
+        <header className="d-flex flex-column align-items-center">
+            <div className="d-flex flex-column align-items-center">
+                <div className="headerLogo">
+                    <img className="img-fluid" src={category.logo} alt={category.name}/>
+                </div>
                 <h1>{category.name}</h1>
             </div>
             <div>
