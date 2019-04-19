@@ -105,19 +105,6 @@ var cardsData = {
             score: 4.444,
             follow: false
         },
-        {
-            id: 7,
-            title: "Une vache tout ce qu'il y a de plus banal",
-            category: "Ruminant",
-            images: [
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbii2cE-mppOkYG1hfBf17qwdtvCTcSz6_r23WvymzduB3pYxL",
-                "https://www.avenuedesanges.com/media/catalog/product/cache/29/image/9df78eab33525d08d6e5fb8d27136e95/l/o/lola-medium-gris-clair---noukies.jpg",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQzRBjtFVDTdDAsxsyXr0Xq2fzWHgUgEbvPxHVTJOeHXgYSDhjZA",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTONFa8S_WtxGXUuecp0SIiwsdfeH507WSezACsCXY9ef5vcqN-"
-            ],
-            score: 4.444,
-            follow: false
-        },
     ] 
 };
 
@@ -128,28 +115,28 @@ function Header({category}) {
                 <div className="headerLogo">
                     <img className="img-fluid" src={category.logo} alt={category.name}/>
                 </div>
-                <h1>{category.name}</h1>
+                <h1 className="h1">{category.name}</h1>
             </div>
-            <div>
-                <ul>
-                    <li>
-                        <p>{category.boardsNumber}</p>
+            <div className="w-100">
+                <ul className="nav justify-content-around">
+                    <li className="nav-item d-flex flex-column align-items-center">
+                        <h5>{category.boardsNumber}</h5>
                         <h5>Boards</h5>
                     </li>
-                    <li>
-                        <p>{category.pinsNumber}</p>
+                    <li className="nav-item d-flex flex-column align-items-center">
+                        <h5>{category.pinsNumber}</h5>
                         <h5>Pins</h5>
                     </li>
-                    <li>
-                        <p>{category.likesNumber}</p>
+                    <li className="nav-item d-flex flex-column align-items-center">
+                        <h5>{category.likesNumber}</h5>
                         <h5>Likes</h5>
                     </li>
-                    <li>
-                        <p>{category.followersNumber}</p>
+                    <li className="nav-item d-flex flex-column align-items-center">
+                        <h5>{category.followersNumber}</h5>
                         <h5>Followers</h5>
                     </li>
-                    <li>
-                        <p>{category.followingNumber}</p>
+                    <li className="nav-item d-flex flex-column align-items-center">
+                        <h5>{category.followingNumber}</h5>
                         <h5>Following</h5>
                     </li>
                 </ul>
@@ -164,7 +151,7 @@ Header.propTypes = {
 
 function ListCards({cards}) {
     return (
-        <div>
+        <div className="row">
             {cards.map(card => (
                 <Card key={card.id} card={card}/>
             ))}
@@ -178,11 +165,13 @@ ListCards.propTypes = {
 
 function Card({card}) {
     return (
-        <div className="card col-md-4 u-paddingNone">
-            <div className="card-body">
-                <CardHeader title={card.title} category={card.category}/>
-                <CardImgContainer images={card.images} score={card.score}/>
-                <FollowButton url={card.follow}/>
+        <div className="col-md-4 u-padding-sm u-marginBottom-md">
+            <div className="card u-paddingNone">
+                <div className="card-body">
+                    <CardHeader title={card.title} category={card.category}/>
+                    <CardImgContainer images={card.images} score={card.score}/>
+                    <FollowButton url={card.follow}/>
+                </div>
             </div>
         </div>
     );

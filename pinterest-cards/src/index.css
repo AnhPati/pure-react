@@ -1,3 +1,8 @@
+.u-padding-sm {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .u-padding-xs {
   padding-left: 0.2rem;
   padding-right: 0.2rem;
@@ -12,16 +17,28 @@
   margin-top: 1rem;
 }
 
+.u-marginBottom-md {
+  margin-bottom: 1rem;
+}
+
 .u-marginBottom-xs {
   margin-bottom: 0.2rem;
 }
 
+.u-marginNone {
+  margin: 0;
+}
+
 .headerLogo {
   width: 7rem;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .c-followBtn {
   color: #8d2626!important;
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, .125);
 }
 
 .c-followBtn:hover {
