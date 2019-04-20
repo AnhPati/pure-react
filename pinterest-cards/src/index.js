@@ -23,7 +23,7 @@ var cardsData = {
         boardsNumber: 43,
         pinsNumber: 12,
         likesNumber: 1234,
-        followersNumber: 304,
+        followersNumber: 50004,
         followingNumber: 210,
     },
     cards: [
@@ -109,35 +109,40 @@ var cardsData = {
 };
 
 function Header({category}) {
+    let boardsNumber = category.boardsNumber;
+    let pinsNumber = category.pinsNumber;
+    let likesNumber = category.likesNumber;
+    let followersNumber = category.followersNumber;
+    let followingNumber = category.followingNumber;
     return (
         <header className="d-flex flex-column align-items-center">
             <div className="d-flex flex-column align-items-center">
-                <div className="headerLogo">
+                <div className="headerLogo u-marginBottom-md u-marginTop-md">
                     <img className="img-fluid" src={category.logo} alt={category.name}/>
                 </div>
-                <h1 className="h1">{category.name}</h1>
+                <h1 className="h1 title-big">{category.name}</h1>
             </div>
             <div className="w-100">
                 <ul className="nav justify-content-around">
-                    <li className="nav-item d-flex flex-column align-items-center">
-                        <h5>{category.boardsNumber}</h5>
-                        <h5>Boards</h5>
+                    <li className="navItem nav-item d-flex flex-column align-items-center u-paddingTop-md u-paddingBottom-md actif">
+                        <h5 className="u-marginNone title-big">{boardsNumber > 1000 ? boardsNumber.toString().slice(0, -3) + "K" : boardsNumber}</h5>
+                        <h5 className="title-small">Boards</h5>
                     </li>
-                    <li className="nav-item d-flex flex-column align-items-center">
-                        <h5>{category.pinsNumber}</h5>
-                        <h5>Pins</h5>
+                    <li className="navItem nav-item d-flex flex-column align-items-center u-paddingTop-md u-paddingBottom-md">
+                        <h5 className="u-marginNone title-big">{pinsNumber > 1000 ? pinsNumber.toString().slice(0, -3) + "K" : pinsNumber}</h5>
+                        <h5 className="title-small">Pins</h5>
                     </li>
-                    <li className="nav-item d-flex flex-column align-items-center">
-                        <h5>{category.likesNumber}</h5>
-                        <h5>Likes</h5>
+                    <li className="navItem nav-item d-flex flex-column align-items-center u-paddingTop-md u-paddingBottom-md">
+                        <h5 className="u-marginNone title-big">{likesNumber > 1000 ? likesNumber.toString().slice(0, -3) + "K" : likesNumber}</h5>
+                        <h5 className="title-small">Likes</h5>
                     </li>
-                    <li className="nav-item d-flex flex-column align-items-center">
-                        <h5>{category.followersNumber}</h5>
-                        <h5>Followers</h5>
+                    <li className="navItem nav-item d-flex flex-column align-items-center u-paddingTop-md u-paddingBottom-md">
+                        <h5 className="u-marginNone title-big">{followersNumber > 1000 ? followersNumber.toString().slice(0, -3) + "K" : followersNumber}</h5>
+                        <h5 className="title-small">Followers</h5>
                     </li>
-                    <li className="nav-item d-flex flex-column align-items-center">
-                        <h5>{category.followingNumber}</h5>
-                        <h5>Following</h5>
+                    <li className="navItem nav-item d-flex flex-column align-items-center u-paddingTop-md u-paddingBottom-md">
+                        <h5 className="u-marginNone title-big">{followingNumber > 1000 ? followingNumber.toString().slice(0, -3) + "K" : followingNumber}</h5>
+                        <h5 className="title-small">Following</h5>
                     </li>
                 </ul>
             </div>
@@ -151,7 +156,7 @@ Header.propTypes = {
 
 function ListCards({cards}) {
     return (
-        <div className="row">
+        <div className="row listCards u-paddingTop-md u-padding-xl">
             {cards.map(card => (
                 <Card key={card.id} card={card}/>
             ))}
