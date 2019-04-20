@@ -213,11 +213,12 @@ CardHeader.propTypes = {
     category: PropTypes.string
 };
 
-function CardImgContainer({images}) {
+function CardImgContainer({images, score}) {
     return (
         <div className="row u-marginTop-md">
             <div className="col-md-12 cardImg-primary u-marginBottom-xs">
                 <img src={images[0]} className="card-img card"/>
+                <span className="score"><i class="fas fa-thumbtack"></i> {score}</span>
             </div>
             <div className="card-group u-marginBottom-xs col-md-12">
                 <div className="col-md-4 cardImg-secondary u-paddingNone">
