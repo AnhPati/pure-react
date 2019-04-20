@@ -172,7 +172,7 @@ function Card({card}) {
     return (
         <div className="col-md-4 u-padding-sm u-marginBottom-md">
             <div className="card u-paddingNone">
-                <div className="card-body">
+                <div className="card-body u-paddingFull-sm">
                     <CardHeader title={card.title} category={card.category}/>
                     <CardImgContainer images={card.images} score={card.score}/>
                     <FollowButton url={card.follow}/>
@@ -202,8 +202,8 @@ var cardData = {
 function CardHeader({title, category}) {
     return (
         <React.Fragment>
-            <h5 className="card-title cardTitle">{title}</h5>
-            <h6 className="card-subtitle cardSubtitle">{category}</h6>
+            <h5 className="title-big card-title cardTitle">{title}</h5>
+            <h6 className="title-big card-subtitle cardSubtitle">{category}</h6>
         </React.Fragment>
     );
 };
