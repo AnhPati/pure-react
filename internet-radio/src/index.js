@@ -5,7 +5,7 @@ import "./index.css";
 
 function RadioComponent({genres}) {
     return (
-        <div>
+        <div className="card">
             <RadioHeader/>
             <RadioContainer genres={genres}/>
         </div>
@@ -18,7 +18,7 @@ RadioComponent.prototypes = {
 
 const RadioHeader = () => {
     return (
-        <header>
+        <header className="card-header">
             <div>
                 <h3>
                     <i></i> Popular Genres
@@ -42,9 +42,9 @@ RadioContainer.prototypes = {
     genres: PropTypes.array.isRequired
 };
 
-function RadioButton({genre}) {
+function RadioButton({key, genre}) {
     return (
-        <a href="#">
+        <a className={key > 10 ? "btn btn-primary btn-md" : key > 20 ? "btn btn-primary btn-sm" : key > 30 ? "btn btn-primary btn-xs" : "btn btn-primary btn-lg"} href="#">
             {genre}
         </a>
     );
