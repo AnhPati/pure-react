@@ -13,7 +13,11 @@ const ExercicesContainer = () => {
 
 function CounterExercice() {
     return (
-        <CountingParent/>
+        <div>
+            <CountingParent/>
+            <CountingParent/>
+            <CountingParent/>
+        </div>
     );
 };
 
