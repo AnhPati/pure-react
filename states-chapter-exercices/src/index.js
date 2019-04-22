@@ -13,18 +13,32 @@ const ExercicesContainer = () => {
 
 function CounterExercice() {
     return (
-        <Parent/>
+        <CountingParent/>
     );
 };
 
-function handleAction(event) {
-    console.log('Child did:', event);
-};
 
-function Parent() {
-    return (
-        <Child onAction={handleAction}/>
-    );
+class CountingParent extends React.Component {
+    state = {
+        actionCount: 0
+    }
+
+    handleAction = (action) => {
+        console.log("Child says", action);
+        this.setState({
+            actionCount: this.state.actionCount + 1
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                <Child onAction={this.handleAction}/>
+                <p>Clicked {this.state.actionCount}</p>
+            </div>
+        );
+    }
+    
 };
 
 function Child({onAction}) {
