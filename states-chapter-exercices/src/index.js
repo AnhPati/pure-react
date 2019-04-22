@@ -34,10 +34,19 @@ class CountingParent extends React.Component {
         })
     }
 
+    handleReset = () => {
+        this.setState({
+            actionCount: 0
+        })
+    }
+
     render() {
         return (
             <div>
                 <Child onAction={this.handleAction}/>
+                <button onClick={this.handleReset}>
+                    Reset !
+                </button>
                 <p>Clicked {this.state.actionCount}</p>
             </div>
         );
