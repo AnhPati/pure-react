@@ -6,7 +6,8 @@ import './App.css';
 
 class App extends React.Component {
     state = {
-        activeTab: 0
+        activeTab: 0,
+        cart: []
     };
 
     handleTabChange = (index) => {
