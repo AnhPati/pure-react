@@ -23,6 +23,16 @@ class App extends React.Component {
         });
     };
 
+    handleRemoveOne = (item) => {
+        let index = this.state.cart.indexOf(item.id);
+        this.setState({
+            cart: [
+                ...this.state.cart.slice(0, index),
+                ...this.state.cart.slice(index + 1)
+            ]
+        });
+    };
+
     renderContent() {
         switch(this.state.activeTab) {
             default:
@@ -60,7 +70,11 @@ class App extends React.Component {
         });
         
         return (
-            <CartPage items={cartItems}/>
+            <CartPage
+                items={cartItems}
+                onAddOne={this.handleAddToCart}
+                onRemoveOne={this.handleRemoveOne}
+            />
         );
     };
 
