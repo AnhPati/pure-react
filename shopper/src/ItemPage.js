@@ -15,7 +15,7 @@ function ItemPage({ items, onAddToCart }) {
                         >
                             Add to Cart
                         </button>
-                    <Item/>
+                    </Item>
                 </li>
             )};
         </ul>
