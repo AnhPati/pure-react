@@ -43,6 +43,9 @@ class App extends React.Component {
             <div className="App">
                 <Nav activeTab={activeTab} onTabChange={this.handleTabChange}/>
                 <main className="App-content">
+                    <div>
+                        {this.state.cart.length} items
+                    </div>
                     {this.renderContent()}
                 </main>
             </div>

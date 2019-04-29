@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Item from '.Item';
+import Item from './Item';
 import './ItemPage.css';
 
-function ItemPage({ items }) {
+function ItemPage({ items, onAddToCart }) {
     return (
         <ul className="ItemPage-items">
             {items.map(item => 
