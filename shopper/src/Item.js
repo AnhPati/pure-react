@@ -17,19 +17,14 @@ const Item = ({ item, onAddToCart }) => (
             <div className="Item-price">
                 ${item.price}
             </div>
-            <button
-                className="Item-addToCart"
-                onClick={onAddToCart}
-            >
-                Add to Cart
-            </button>
+            {children}
         </div>
     </div>
 );
 
 Item.propTypes = {
     item: PropTypes.object.isRequired,
-    onAddToCart: PropTypes.func.isRequired
+    children: PropTypes.node
 };
 
 export default Item;
