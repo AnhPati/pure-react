@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ItemPage.css';
 
-function Item Page({ items }) {
+function ItemPage({ items }) {
     return (
         <ul className="ItemPage-items">
             {items.map(item => 
