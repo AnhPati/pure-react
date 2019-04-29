@@ -16,11 +16,24 @@ class App extends React.Component {
         });
     };
 
+    handleAddToCart = (item) => {
+        this.setState({
+            cart: [...this.state.cart, item.id]
+        });
+    };
+
     renderContent() {
         switch(this.state.activeTab) {
             default:
-                case 0: return <ItemPage items={items}/>;
-                case 1: return <span>Cart</span>;
+                case 0:
+                    return (
+                        <ItemPage
+                            items={items}
+                            onAddToCart={this.handleAddToCart}
+                        />
+                    );
+                case 1:
+                    return <span>Cart</span>;
         }
     };
 
