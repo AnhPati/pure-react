@@ -17,7 +17,7 @@ function ItemPage({ items, onAddToCart }) {
                         </button>
                     </Item>
                 </li>
-            )};
+            )}
         </ul>
     );
 };

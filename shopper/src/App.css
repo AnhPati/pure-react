@@ -7,6 +7,9 @@
   margin: 20px;
   padding: 10px;
   border-bottom: 2px solid #508FCA;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .App-nav ul {
@@ -32,6 +35,16 @@
 
 .App-nav-item.selected {
   border-bottom-color: #FFAA3F;
+}
+
+.App-nav-cart {
+  display: none;
+}
+
+.App-nav-cart.show {
+  display: inline-block;
+  color: #999;
+  font-weight: 600;
 }
 
 .App-content {
