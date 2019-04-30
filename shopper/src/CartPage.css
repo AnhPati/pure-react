@@ -25,3 +25,14 @@
 .CartItem-removeOne {
     border-right: none;
 }
+
+.CartPage-totalBox {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.CartPage-totalItem {
+    margin-right: 32px;
+    font-size: 24px;
+}

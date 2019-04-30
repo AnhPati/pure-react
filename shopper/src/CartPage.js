@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import Item from './Item';
 import './CartPage.css';
 
-function CartPage({ items, onAddOne, onRemoveOne }) {
+function CartPage({ items, total, onAddOne, onRemoveOne }) {
     return (
-        <ul className="CartPage-items">
-            {items.map(item =>
+        <div>
+            <ul className="CartPage-items">
+                {items.map(item =>
                     <li key={item.id} className="CartPage-item">
                         <Item item={item}>
                             <div className="CartItem-controls">
@@ -26,8 +27,14 @@ function CartPage({ items, onAddOne, onRemoveOne }) {
                             </div>
                         </Item>
                     </li>
-                )};
-        </ul>
+                )}
+            </ul>
+            <div className="CartPage-totalBox">
+                <span className="CartPage-totalItem">
+                    Total: ${total}
+                </span>
+            </div>
+        </div>
     );
 };
 
