@@ -4,6 +4,11 @@ import Item from './Item';
 import './CartPage.css';
 
 function CartPage({ items, total, onAddOne, onRemoveOne }) {
+    let emptyCart= false;
+    if (total === 0) {
+        emptyCart = true;
+    };
+
     return (
         <div>
             <ul className="CartPage-items">
@@ -29,11 +34,7 @@ function CartPage({ items, total, onAddOne, onRemoveOne }) {
                     </li>
                 )}
             </ul>
-            <div className="CartPage-totalBox">
-                <span className="CartPage-totalItem">
-                    Total: ${total}
-                </span>
-            </div>
+            {emptyCart ? <EmptyCart/> : <Total total={total}/>}
         </div>
     );
 };
@@ -42,6 +43,26 @@ CartPage.propTypes = {
     items: PropTypes.array.isRequired,
     onAddOne: PropTypes.func.isRequired,
     onRemoveOne: PropTypes.func.isRequired
+};
+
+const EmptyCart = () => {
+    return (
+        <div>
+            <span>
+                C'est vide, ne vois tu pas ?!!
+            </span>
+        </div>
+    )
+};
+
+const Total = ({total}) => {
+    return (
+        <div className="CartPage-totalBox">
+            <span className="CartPage-totalItem">
+                Total: ${total}
+            </span>
+        </div>
+    )
 };
 
 export default CartPage;
