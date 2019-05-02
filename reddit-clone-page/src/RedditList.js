@@ -6,8 +6,8 @@ function RedditList({posts}) {
     return(
         <ul>
             {posts.map(post => (
-                <li key={post.id} post={post}>
-                {post.name}
+                <li key={post.id}>
+                    <RedditItem post={post}/>
                 </li>
             ))}
         </ul>
