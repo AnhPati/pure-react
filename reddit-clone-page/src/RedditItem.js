@@ -1,13 +1,15 @@
 import React from 'react';
+import VoteBox from './VoteBox';
+import ItemBox from './ItemBox';
 import PropTypes from 'prop-types';
 import './RedditItem.css';
 
-function RedditItem({ post }) {
+function RedditItem({ score, post }) {
     return (
-        <div>
-            <VoteBox number={post.number}/>
+        <li>
+            <VoteBox score={score}/>
             <ItemBox post={post} />
-        </div>
+        </li>
     )
 }
 

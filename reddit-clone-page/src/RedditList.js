@@ -1,17 +1,16 @@
 import React from 'react';
+import RedditItem from './RedditItem';
 import PropTypes from 'prop-types';
 import './RedditList.css';
 
-function RedditList({posts}) {
+const RedditList = ({posts}) => {
     return(
         <ul>
             {posts.map(post => (
-                <li key={post.id}>
-                    <RedditItem post={post}/>
-                </li>
+                <RedditItem key={post.id} post={post} score={post.score}/>
             ))}
         </ul>
-    );
+    );   
 };
 
 RedditList.propTypes = {
