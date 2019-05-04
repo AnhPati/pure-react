@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import './RedditList.css';
 
 const RedditList = ({posts}) => {
+    let redditList = posts.sort((a, b) => a.score - b.score);
     return(
         <ul>
-            {posts.map(post => (
+            {redditList.map(post => (
                 <RedditItem key={post.id} post={post} score={post.score}/>
             ))}
         </ul>
