@@ -4,10 +4,10 @@ import ItemBox from './ItemBox';
 import PropTypes from 'prop-types';
 import './RedditItem.css';
 
-function RedditItem({ score, post, voteUp, voteDown }) {
+function RedditItem({ score, post, vote }) {
     return (
         <div>
-            <VoteBox score={score} post={post} voteUp={voteUp} voteDown={voteDown}/>
+            <VoteBox score={score} post={post} vote={vote}/>
             <ItemBox post={post} />
         </div>
     )

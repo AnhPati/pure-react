@@ -3,7 +3,7 @@ import RedditItem from './RedditItem';
 import PropTypes from 'prop-types';
 import './RedditList.css';
 
-const RedditList = ({posts, voteUp, voteDown}) => {
+const RedditList = ({posts, vote}) => {
     let redditList = posts.sort((a, b) => a.score - b.score);
     return(
         <ul>
@@ -11,7 +11,7 @@ const RedditList = ({posts, voteUp, voteDown}) => {
 
                 return (
                     <li key={post.id}>
-                        <RedditItem post={post} score={post.score} voteUp={voteUp} voteDown={voteDown}/>
+                        <RedditItem post={post} score={post.score} vote={vote}/>
                     </li>
             )})}
         </ul>

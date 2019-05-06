@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './VoteBox.css';
 
-const VoteBox = ({score, post, voteUp, voteDown}) => {
+const VoteBox = ({score, post, vote}) => {
 
     return (
         <div>
-            <button onClick={() => voteUp(post)}>
+            <button onClick={() => vote(post, "increment")}>
                 +
             </button>
             {score}
-            <button onClick={() => voteDown(post)}>
+            <button onClick={() => vote(post, "decrement")}>
                 -
             </button>
         </div>
