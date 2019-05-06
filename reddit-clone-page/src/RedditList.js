@@ -7,9 +7,13 @@ const RedditList = ({posts, voteUp, voteDown}) => {
     let redditList = posts.sort((a, b) => a.score - b.score);
     return(
         <ul>
-            {redditList.map(post => (
-                <RedditItem key={post.id} post={post} score={post.score} voteUp={voteUp} voteDown={voteDown}/>
-            ))}
+            {redditList.map(post => {
+
+                return (
+                    <li key={post.id}>
+                        <RedditItem post={post} score={post.score} voteUp={voteUp} voteDown={voteDown}/>
+                    </li>
+            )})}
         </ul>
     );   
 };

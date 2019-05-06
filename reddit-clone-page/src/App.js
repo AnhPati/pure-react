@@ -35,21 +35,39 @@ class App extends React.Component {
       this.setState({posts});
       });
   };*/
-  handleVoteUp = (item) => {
-    console.log(item)
+  handleVoteUp = (post) => {
+    let newStatePosts = this.state.posts.map(item => {
+      if (post.id === item.id) {
+        item.score = post.score + 1
+      }
+      return item
+    });
+    console.log(newStatePosts);
     this.setState({
-      score: item + 1
+      posts: newStatePosts
     });
   };
 
-  handleVoteDown = (item) => {
-    console.log(item)
+  handleVoteDown = (post) => {
+    let newStatePosts = this.state.posts.map(item => {
+      if (post.id === item.id) {
+        item.score = post.score - 1
+        console.log(item.score)
+      }
+      return item
+    });
+    console.log(newStatePosts);
+    console.log(this.state.posts)
     this.setState({
-      score: item - 1
+      posts: newStatePosts
     });
   };
 
   render() {
+    let test = this.state.posts.map(item => {
+      console.log("coucou");
+    });
+    console.log(test);
     return (
       <RedditList posts={this.state.posts} voteUp={this.handleVoteUp} voteDown={this.handleVoteDown}/>
     );
