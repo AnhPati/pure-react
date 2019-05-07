@@ -16,6 +16,7 @@ const ItemBox = ({post}) => {
                 <BtnBox/>
             </div>
             {post.author}
+            <p>ID : {post.id}</p>
         </div>
     )
 }
