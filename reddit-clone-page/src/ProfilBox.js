@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import logo_reddit from './logo_reddit.jpg'
 import "./ProfilBox.css";
 
 function ProfilBox({post}) {
     return (
-        <div>
-            <img src="" alt=""/>
+        <div className="profilBox mx-4">
+            <img className={post.thumbnail === "self" ? "redditImg" : "profilImg"} src={post.thumbnail === "self" ? logo_reddit : post.thumbnail} alt={post.author}/>
         </div>
     )
 }

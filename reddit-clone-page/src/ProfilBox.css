@@ -1,0 +1,14 @@
+.profilBox {
+    width: 7rem;
+    height: 5rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.profilImg {
+    width: 100%;
+}
+
+.redditImg {
+    width: 70%;
+}

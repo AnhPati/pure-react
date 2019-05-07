@@ -8,7 +8,7 @@ import './ItemBox.css';
 
 const ItemBox = ({post}) => {
     return (
-        <div>
+        <div className="d-flex">
             <ProfilBox post={post}/>
             <div>
                 <TitleBox post={post}/>
