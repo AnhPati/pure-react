@@ -1,40 +1,20 @@
 import React from 'react';
-/*import axios from 'axios';*/
+import axios from 'axios';
 import RedditItem from './RedditItem';
 import PropTypes from 'prop-types';
 import './RedditList.css';
 
 class RedditList extends React.Component {
     state = {
-        posts: [{
-                id: 1,
-                score: 3,
-                author: "Joe",
-            },
-            {
-                id: 2,
-                score: 13,
-                author: "Jill",
-            },
-            {
-                id: 3,
-                score: 31,
-                author: "Jay",
-            },
-            {
-                id: 4,
-                score: 23,
-                author: "Jul",
-            }
-        ],
+        posts: [],
     };
 
-    /*componentDidMount() {
+    componentDidMount() {
         axios.get('https://www.reddit.com/r/reactjs.json').then(res => {
         const posts = res.data.data.children.map(obj => obj.data);
         this.setState({posts});
         });
-    };*/
+    };
 
     handleVote = (post, action) => {
         let newStatePosts = this.state.posts.map(item => {
