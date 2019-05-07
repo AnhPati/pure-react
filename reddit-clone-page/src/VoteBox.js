@@ -5,13 +5,13 @@ import './VoteBox.css';
 const VoteBox = ({score, post, vote}) => {
 
     return (
-        <div>
-            <button onClick={() => vote(post, "increment")}>
-                +
+        <div className="d-flex align-items-center flex-column">
+            <button className="btnNone btnVote" onClick={() => vote(post, "increment")}>
+                <i className="fas fa-arrow-up font-weight-bold"></i>
             </button>
-            {score}
-            <button onClick={() => vote(post, "decrement")}>
-                -
+            <span className="scoreVote font-weight-bold">{score}</span>
+            <button className="btnNone btnVote" onClick={() => vote(post, "decrement")}>
+                <i className="fas fa-arrow-down font-weight-bold"></i>
             </button>
         </div>
     )

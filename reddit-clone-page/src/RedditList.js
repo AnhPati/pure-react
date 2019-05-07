@@ -51,9 +51,11 @@ class RedditList extends React.Component {
         )})
 
         return (
-            <ul>
-                {redditList}
-            </ul>
+            <div className="container-fluid mainContainer">
+                <ul className="list-group card shadow-sm redditList">
+                    {redditList}
+                </ul>
+            </div>
         );
     }    
 };

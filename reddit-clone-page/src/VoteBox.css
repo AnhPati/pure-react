@@ -1,0 +1,20 @@
+.btnNone {
+    border: none;
+    background: none;
+}
+
+.btnNone:focus {
+    outline: none;
+}
+
+.btnVote {
+    color: #b9b9b9;
+}
+
+.btnVote:focus, .btnVote:hover {
+    color: #999999;
+}
+
+.scoreVote {
+    color: #b9b9b9;
+}
