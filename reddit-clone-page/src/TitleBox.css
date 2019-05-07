@@ -1,0 +1,31 @@
+.cLink-none {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cLink-none:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cLink-none:focus {
+    outline: none;
+}
+
+.titlePost {
+    color: #FF5706;
+}
+
+.titlePost:hover {
+   color: #FD7A12;
+}
+
+.titleSource {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgb(189, 189, 189);
+}
+
+.titleSource:hover {
+    color: rgb(141, 141, 141);
+}
