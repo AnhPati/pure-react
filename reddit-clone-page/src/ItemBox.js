@@ -10,13 +10,11 @@ const ItemBox = ({post}) => {
     return (
         <div className="d-flex">
             <ProfilBox post={post}/>
-            <div>
+            <div className="d-flex flex-column">
                 <TitleBox post={post}/>
                 <SubBox post={post}/>
                 <BtnBox/>
             </div>
-            {post.author}
-            <p>ID : {post.id}</p>
         </div>
     )
 }
