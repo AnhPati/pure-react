@@ -7,7 +7,7 @@ function SubBox({post}) {
     let time = post.created_utc.toString();
     return (
         <div>
-            <p className="subText">Submitted <Time time={time}/> ago by <a href="#" className="cLink-none subAuthor">{post.author}</a></p>
+            <p className="subText mb-1">Submitted <Time time={time}/> ago by <a href="#" className="cLink-none subAuthor">{post.author}</a></p>
         </div>
     )
 }

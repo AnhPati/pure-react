@@ -8,9 +8,9 @@ import './ItemBox.css';
 
 const ItemBox = ({post}) => {
     return (
-        <div className="d-flex">
+        <div className="d-flex w-100">
             <ProfilBox post={post}/>
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column w-100 py-4 border-bottom">
                 <TitleBox post={post}/>
                 <SubBox post={post}/>
                 <BtnBox comment={post.num_comments}/>

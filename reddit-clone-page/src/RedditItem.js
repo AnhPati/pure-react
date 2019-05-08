@@ -6,7 +6,7 @@ import './RedditItem.css';
 
 function RedditItem({ score, post, vote }) {
     return (
-        <div className="d-flex w-100 p-4">
+        <div className="d-flex w-100 px-4">
             <VoteBox score={score} post={post} vote={vote}/>
             <ItemBox post={post} />
             {console.log(post)}

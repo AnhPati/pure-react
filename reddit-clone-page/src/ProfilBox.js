@@ -5,7 +5,7 @@ import "./ProfilBox.css";
 
 function ProfilBox({post}) {
     return (
-        <div className="profilBox mx-4">
+        <div className="profilBox m-4">
             <img className={post.thumbnail === "self" ? "redditImg" : "profilImg"} src={post.thumbnail === "self" ? logo_reddit : post.thumbnail} alt={post.author}/>
         </div>
     )
