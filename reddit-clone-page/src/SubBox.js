@@ -12,4 +12,8 @@ function SubBox({post}) {
     )
 }
 
+SubBox.prototypes = {
+    post: PropTypes.object.isRequired,
+}
+
 export default SubBox;

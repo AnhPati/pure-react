@@ -19,4 +19,8 @@ const ItemBox = ({post}) => {
     )
 }
 
+ItemBox.prototypes = {
+    post: PropTypes.object.isRequired,
+}
+
 export default ItemBox;

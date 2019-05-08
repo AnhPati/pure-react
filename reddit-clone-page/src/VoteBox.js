@@ -17,4 +17,10 @@ const VoteBox = ({score, post, vote}) => {
     )
 }
 
+VoteBox.prototypes = {
+    score: PropTypes.number.isRequired,
+    post: PropTypes.object.isRequired,
+    vote: PropTypes.func.isRequired
+}
+
 export default VoteBox;

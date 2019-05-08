@@ -16,4 +16,8 @@ const BtnBox = ({comment}) => {
     )
 }
 
+BtnBox.prototypes = {
+    comment: PropTypes.number.isRequired,
+}
+
 export default BtnBox;

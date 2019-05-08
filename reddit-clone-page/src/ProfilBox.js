@@ -11,4 +11,8 @@ function ProfilBox({post}) {
     )
 }
 
+ProfilBox.prototypes = {
+    post: PropTypes.object.isRequired,
+}
+
 export default ProfilBox;

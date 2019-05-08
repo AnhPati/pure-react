@@ -13,4 +13,7 @@ function TitleBox({post}) {
     )
 }
 
+TitleBox.prototypes = {
+    post: PropTypes.object.isRequired,
+}
 export default TitleBox;

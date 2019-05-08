@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import RedditItem from './RedditItem';
-import PropTypes from 'prop-types';
 import './RedditList.css';
 
 class RedditList extends React.Component {
@@ -59,9 +58,5 @@ class RedditList extends React.Component {
         );
     }    
 };
-
-RedditList.propTypes = {
-    posts: PropTypes.array.isRequired
-}
 
 export default RedditList;
