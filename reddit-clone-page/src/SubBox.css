@@ -1,0 +1,26 @@
+.cLink-none {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cLink-none:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cLink-none:focus {
+    outline: none;
+}
+
+.subText {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(189, 189, 189);
+}
+.subAuthor {
+    color: rgb(0, 0, 0);
+}
+
+.subAuthor:hover {
+    color: rgb(141, 141, 141);
+}
