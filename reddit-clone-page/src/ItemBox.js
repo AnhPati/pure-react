@@ -13,7 +13,7 @@ const ItemBox = ({post}) => {
             <div className="d-flex flex-column">
                 <TitleBox post={post}/>
                 <SubBox post={post}/>
-                <BtnBox/>
+                <BtnBox comment={post.num_comments}/>
             </div>
         </div>
     )

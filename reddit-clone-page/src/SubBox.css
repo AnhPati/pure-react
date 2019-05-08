@@ -18,9 +18,9 @@
     color: rgb(189, 189, 189);
 }
 .subAuthor {
-    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0)!important;
 }
 
 .subAuthor:hover {
-    color: rgb(141, 141, 141);
+    color: rgb(141, 141, 141)!important;
 }
