@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChannelBox from './ChannelBox';
-import PeopleBox from './ProfilBox';
+import PeopleBox from './PeopleBox';
 import './ChatPanel.css';
 
 function ChatPanel({channels, people}) {

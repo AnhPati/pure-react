@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ChannelBox from './ChannelBox';
+import './ChannelBox.css';
 
-function ChannelBox({channels}) {
+const ChannelBox = ({channels}) => {
     return (
         <ul>
             {channels.map(channel => {
