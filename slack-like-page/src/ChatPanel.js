@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChannelBox from './ChannelBox';
-import ProfilBox from './ProfilBox';
+import PeopleBox from './ProfilBox';
 import './ChatPanel.css';
 
 function ChatPanel({channels, people}) {
@@ -13,9 +13,9 @@ function ChatPanel({channels, people}) {
     )
 };
 
-ChatPanel.proptypes = {
-    channels: PropTypes.number.isRequired,
-    people: PropTypes.num.isRequired
+ChatPanel.propTypes = {
+    channels: PropTypes.array.isRequired,
+    people: PropTypes.array.isRequired
 };
 
 export default ChatPanel;
