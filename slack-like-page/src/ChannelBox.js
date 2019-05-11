@@ -14,7 +14,11 @@ function ChannelBox({channels}) {
             })}
         </ul>
 
-    )
+    );
 };
+
+ChannelBox.propTypes = {
+    channels: PropTypes.array.isRequired
+}
 
 export default ChannelBox;
