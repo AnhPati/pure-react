@@ -19,9 +19,14 @@ class SlackClone extends Component {
 
     render() {
         return (
-            <div>
+            <div class="container-fluid">
+            <div class="">
                 <ChatPanel channels={this.state.channels} people={this.state.people}/>
+            </div>
+            <div>
                 {/*<ChatWindow channels={this.state.channels} people={this.state.people}/>*/}
+            </div>
+                  
             </div>
         );
     };

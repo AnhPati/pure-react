@@ -6,7 +6,7 @@ import './ChatPanel.css';
 
 function ChatPanel({channels, people}) {
     return (
-        <div>
+        <div className="chatPanel container-fluid uPadding-rightNone">
             <ChannelBox channels={channels}/>
             <PeopleBox people={people}/>
         </div>

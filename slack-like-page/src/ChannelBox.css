@@ -1,0 +1,28 @@
+.cList-none {
+    list-style: none;
+}
+
+.btnChat {
+    text-align: start;
+    padding: 0.2rem 0 0.2rem 0.2rem!important;
+    border: none;
+    background: none;
+    color: #FFF;
+}
+
+.btnChat:hover {
+    font-weight: 600;
+}
+
+.channelActive {
+    background: rgb(255, 218, 118) !important;
+    color: rgb(26, 109, 40)!important;
+}
+
+.btnChat.news {
+    font-weight: 700;
+}
+
+.uMargin-bottom-xl {
+    margin-bottom: 3rem;
+}

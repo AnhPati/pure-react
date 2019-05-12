@@ -1,0 +1,9 @@
+.chatPanel {
+    background-color: rgb(26, 109, 40);
+    color: #FFFFFF;
+    padding-top: 2rem;
+}
+
+.uPadding-rightNone {
+    padding-right: 0;
+}

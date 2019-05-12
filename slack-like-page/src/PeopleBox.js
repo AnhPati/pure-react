@@ -4,15 +4,23 @@ import './PeopleBox.css';
 
 function PeopleBox({people}) {
     return (
-        <ul>
-            {people.map(person => {
-                return (
-                    <li key={person.id} className={person.active ? "personActive" : ""}>
-                        #{person.name}
-                    </li>
-                )
-            })}
-        </ul>
+        <div>
+            
+            <ul className="cList-none d-flex flex-column align-items-start">
+            <h5>
+                PEOPLE
+            </h5>
+                {people.map(person => {
+                    return (
+                        <li key={person.id} className={person.active ? "personActive w-100" : "w-100"}>
+                            <button className="btnChat w-100">
+                                #{person.name}
+                            </button>
+                        </li>
+                    )
+                })}
+            </ul>
+        </div>
     )
 }
 
