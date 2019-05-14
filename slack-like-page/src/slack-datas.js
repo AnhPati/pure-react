@@ -4,6 +4,7 @@ let conversations = {
             id: 1,
             name: "ReactJS",
             active: false,
+            news: false,
             posts: [
                 {
                     id: 1,
@@ -28,6 +29,7 @@ let conversations = {
             id: 2,
             name: "Aléatoire",
             active: false,
+            news: false,
             posts: [
                 {
                     id: 1,
@@ -52,6 +54,7 @@ let conversations = {
             id: 3,
             name: "Présentation",
             active: false,
+            news: true,
             posts: [
                 {
                     id: 1,
@@ -78,6 +81,7 @@ let conversations = {
            id: 1,
            name: "James",
            active: false,
+           news: false,
            posts: [
                 {
                     id: 1,
@@ -102,6 +106,7 @@ let conversations = {
             id: 2,
             name: "Cindy",
             active: false,
+            news: true,
             posts: [
                 {
                     id: 1,
@@ -126,6 +131,7 @@ let conversations = {
             id: 3,
             name: "Moi",
             active: false,
+            news: false,
             posts: [
                 {
                     id: 1,

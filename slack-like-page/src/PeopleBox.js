@@ -13,7 +13,7 @@ function PeopleBox({people}) {
                 {people.map(person => {
                     return (
                         <li key={person.id} className={person.active ? "personActive w-100" : "w-100"}>
-                            <button className="btnChat w-100">
+                            <button className={person.news ? "btnChat news w-100" : "btnChat w-100"}>
                                 #{person.name}
                             </button>
                         </li>

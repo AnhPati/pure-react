@@ -10,6 +10,19 @@ class SlackClone extends Component {
         people: []
     };
 
+    handleChatChoice = (channel) => {
+        let newChannels = this.state.channels.map(item => {
+            if (channel.id === item.id) {
+                item.active = true;
+            } else {
+                item.active = false;
+            };
+        });
+        this.setState({
+            channels: newChannels
+        });
+    }
+
     componentDidMount() {
         this.setState({
             channels: conversations.channels,
@@ -19,9 +32,9 @@ class SlackClone extends Component {
 
     render() {
         return (
-            <div class="container-fluid">
-            <div class="">
-                <ChatPanel channels={this.state.channels} people={this.state.people}/>
+            <div className="container-fluid">
+            <div className="">
+                <ChatPanel channels={this.state.channels} people={this.state.people} channelChoice={this.handleChatChoice}/>
             </div>
             <div>
                 {/*<ChatWindow channels={this.state.channels} people={this.state.people}/>*/}
