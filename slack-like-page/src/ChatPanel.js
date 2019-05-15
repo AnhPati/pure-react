@@ -7,7 +7,7 @@ import './ChatPanel.css';
 function ChatPanel({channels, people, channelChoice}) {
     let listChannels = channels.map(channel => {
         return (
-            <li key={channel.id}>
+            <li key={channel.id} className="w-100">
                 <ChannelBox channel={channel} channelChoice={channelChoice}/>
             </li>
         )

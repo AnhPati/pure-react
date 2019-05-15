@@ -14,9 +14,17 @@
     font-weight: 600;
 }
 
+.btnChat:focus {
+    outline: none;
+}
+
 .channelActive {
     background: rgb(255, 218, 118) !important;
+}
+
+.channelActive > .btnChat {
     color: rgb(26, 109, 40)!important;
+    font-weight: 600;
 }
 
 .btnChat.news {

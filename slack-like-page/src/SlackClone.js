@@ -14,14 +14,16 @@ class SlackClone extends Component {
         let newChannels = this.state.channels.map(item => {
             if (channel.id === item.id) {
                 item.active = true;
+                item.news = false;
             } else {
                 item.active = false;
             };
+            return item;
         });
         this.setState({
             channels: newChannels
         });
-    }
+    };
 
     componentDidMount() {
         this.setState({
