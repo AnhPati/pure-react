@@ -14,11 +14,23 @@
     font-weight: 600;
 }
 
-.personActive {
-    background: rgb(255, 218, 118) !important;
-    color: rgb(26, 109, 40) !important;
-}
-
 .btnChat.news {
     font-weight: 700;
+}
+
+.btnChat:focus {
+    outline: none;
+}
+
+.personActive {
+    background: rgb(255, 218, 118) !important;
+}
+
+.personActive > .btnChat {
+    color: rgb(26, 109, 40) !important;
+    font-weight: 600;
+}
+
+.uMargin-bottom-xl {
+    margin-bottom: 3rem;
 }

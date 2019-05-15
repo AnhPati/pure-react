@@ -1,7 +1,7 @@
 let conversations = {
     channels: [    
         {
-            id: 1,
+            id: "c-1",
             name: "ReactJS",
             active: false,
             news: false,
@@ -26,7 +26,7 @@ let conversations = {
             ]
         },
         {
-            id: 2,
+            id: "c-2",
             name: "Aléatoire",
             active: false,
             news: false,
@@ -51,7 +51,7 @@ let conversations = {
             ]
         },
         {
-            id: 3,
+            id: "c-3",
             name: "Présentation",
             active: false,
             news: true,
@@ -78,7 +78,7 @@ let conversations = {
     ],
     people: [
        {
-           id: 1,
+           id: "p-1",
            name: "James",
            active: false,
            news: false,
@@ -103,7 +103,7 @@ let conversations = {
             ]
        },
        {
-            id: 2,
+            id: "p-2",
             name: "Cindy",
             active: false,
             news: true,
@@ -128,7 +128,7 @@ let conversations = {
             ]
         },
         {
-            id: 3,
+            id: "p-3",
             name: "Moi",
             active: false,
             news: false,

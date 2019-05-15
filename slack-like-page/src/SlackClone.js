@@ -10,9 +10,18 @@ class SlackClone extends Component {
         people: []
     };
 
-    handleChatChoice = (channel) => {
+    handleChatChoice = (chat) => {
         let newChannels = this.state.channels.map(item => {
-            if (channel.id === item.id) {
+            if (chat.id === item.id) {
+                item.active = true;
+                item.news = false;
+            } else {
+                item.active = false;
+            };
+            return item;
+        });
+        let newPeople = this.state.people.map(item => {
+            if (chat.id === item.id) {
                 item.active = true;
                 item.news = false;
             } else {
@@ -21,7 +30,8 @@ class SlackClone extends Component {
             return item;
         });
         this.setState({
-            channels: newChannels
+            channels: newChannels,
+            people: newPeople
         });
     };
 
@@ -36,7 +46,7 @@ class SlackClone extends Component {
         return (
             <div className="container-fluid">
             <div className="">
-                <ChatPanel channels={this.state.channels} people={this.state.people} channelChoice={this.handleChatChoice}/>
+                <ChatPanel channels={this.state.channels} people={this.state.people} chatChoice={this.handleChatChoice}/>
             </div>
             <div>
                 {/*<ChatWindow channels={this.state.channels} people={this.state.people}/>*/}

@@ -4,11 +4,18 @@ import ChannelBox from './ChannelBox';
 import PeopleBox from './PeopleBox';
 import './ChatPanel.css';
 
-function ChatPanel({channels, people, channelChoice}) {
+function ChatPanel({channels, people, chatChoice}) {
     let listChannels = channels.map(channel => {
         return (
             <li key={channel.id} className="w-100">
-                <ChannelBox channel={channel} channelChoice={channelChoice}/>
+                <ChannelBox channel={channel} chatChoice={chatChoice}/>
+            </li>
+        )
+    });
+    let listPeople = people.map(person => {
+        return (
+            <li key={person.id} className="w-100">
+                <PeopleBox person={person} chatChoice={chatChoice}/>
             </li>
         )
     })
@@ -20,8 +27,12 @@ function ChatPanel({channels, people, channelChoice}) {
                 </h5>
                 {listChannels}
             </ul>
-            
-            <PeopleBox people={people}/>
+            <ul className="cList-none d-flex flex-column align-items-start">
+                <h5>
+                    PEOPLE
+                </h5>
+                {listPeople}
+            </ul>
         </div>
     )
 };
