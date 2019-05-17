@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChannelBox from './ChannelBox';
-import PeopleBox from './PeopleBox';
 import './ChatPanel.css';
 
 function ChatPanel({channels, people, chatChoice}) {
@@ -15,7 +14,7 @@ function ChatPanel({channels, people, chatChoice}) {
     let listPeople = people.map(person => {
         return (
             <li key={person.id} className="w-100">
-                <PeopleBox person={person} chatChoice={chatChoice}/>
+                <ChannelBox channel={person} chatChoice={chatChoice}/>
             </li>
         )
     })
