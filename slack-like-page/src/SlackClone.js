@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ChatPanel from './ChatPanel';
-// import ChatWindow from './ChatWindow';
+import ChatWindow from './ChatWindow';
 import {conversations} from './slack-datas'
 import './SlackClone.css';
 
@@ -43,13 +43,28 @@ class SlackClone extends Component {
     };
 
     render() {
+        let channelActive;
+        this.state.channels.map(item => {
+            if (item.active) {
+                return (
+                    channelActive = item.posts
+                )
+            }
+        });
+        this.state.people.map(item => {
+            if (item.active) {
+                return (
+                    channelActive = item
+                )
+            }
+        });
         return (
             <div className="container-fluid">
             <div className="">
                 <ChatPanel channels={this.state.channels} people={this.state.people} chatChoice={this.handleChatChoice}/>
             </div>
             <div>
-                {/*<ChatWindow channels={this.state.channels} people={this.state.people}/>*/}
+                <ChatWindow chat={channelActive}/>
             </div>
                   
             </div>

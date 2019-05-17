@@ -3,7 +3,7 @@ let conversations = {
         {
             id: "c-1",
             name: "ReactJS",
-            active: false,
+            active: true,
             news: false,
             posts: [
                 {
