@@ -35,6 +35,10 @@ class SlackClone extends Component {
         });
     };
 
+    // handleNewPost = (event) => {
+
+    // }
+
     componentDidMount() {
         this.setState({
             channels: conversations.channels,

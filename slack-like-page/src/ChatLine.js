@@ -4,7 +4,7 @@ import './ChatLine.css';
 
 function ChatLine({post}) {
     return (
-        <div>
+        <div className="">
             <div>
                 {post.author} {post.postDate}
             </div>
