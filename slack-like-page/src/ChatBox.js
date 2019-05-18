@@ -12,7 +12,7 @@ const ChatBox = ({chat}) => {
         )
     });
     return (
-        <ul>
+        <ul className="cList-none d-flex flex-column-reverse cList-noPadding justify-content-end">
             {chatList}
         </ul>
     )

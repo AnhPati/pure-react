@@ -2,6 +2,7 @@
     background-color: rgb(26, 109, 40);
     color: #FFFFFF;
     padding-top: 2rem;
+    min-height: 100vh;
 }
 
 .uPadding-rightNone {

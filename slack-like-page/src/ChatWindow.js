@@ -6,7 +6,7 @@ import './ChatWindow.css';
 
 function ChatWindow({chat}) {
     return (
-        <div>
+        <div className="container-fluid chatWindow">
             <ChatBox chat={chat}/>
             {/*<InputBox/>*/}
         </div>

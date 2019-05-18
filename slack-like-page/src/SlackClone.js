@@ -59,14 +59,15 @@ class SlackClone extends Component {
             }
         });
         return (
-            <div className="container-fluid">
-            <div className="">
-                <ChatPanel channels={this.state.channels} people={this.state.people} chatChoice={this.handleChatChoice}/>
-            </div>
-            <div>
-                <ChatWindow chat={channelActive}/>
-            </div>
-                  
+            <div className="w-100">
+                <div className="d-flex flex-nowrap">
+                    <div className="chatPanel-container">
+                        <ChatPanel channels={this.state.channels} people={this.state.people} chatChoice={this.handleChatChoice}/>
+                    </div>
+                    <div className="w-100">
+                        <ChatWindow chat={channelActive}/>
+                    </div>  
+                </div>
             </div>
         );
     };
