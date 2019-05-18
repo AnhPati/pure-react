@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ChatLine from './ChatLine';
 import './ChatBox.css';
 
-function ChatBox({chat}) {
+const ChatBox = ({chat}) => {
     let chatList = chat.map(item => {
         return (
             <li key={item.id}>
@@ -11,10 +11,9 @@ function ChatBox({chat}) {
             </li>
         )
     });
-    console.log(chat)
     return (
         <ul>
-            {}
+            {chatList}
         </ul>
     )
 }

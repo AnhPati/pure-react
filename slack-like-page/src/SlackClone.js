@@ -43,7 +43,7 @@ class SlackClone extends Component {
     };
 
     render() {
-        let channelActive;
+        let channelActive = [];
         this.state.channels.map(item => {
             if (item.active) {
                 return (
@@ -54,7 +54,7 @@ class SlackClone extends Component {
         this.state.people.map(item => {
             if (item.active) {
                 return (
-                    channelActive = item
+                    channelActive = item.posts
                 )
             }
         });

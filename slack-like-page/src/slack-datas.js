@@ -17,7 +17,8 @@ let conversations = {
                     author: "Moi",
                     postDate: "2016-07-30 21:35:37",
                     content: "Bah bien bien quoi !"
-                }, {
+                },
+                {
                     id: 3,
                     author: "Cindy",
                     postDate: "2016-07-30 21:40:37",
