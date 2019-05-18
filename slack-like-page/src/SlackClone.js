@@ -35,9 +35,16 @@ class SlackClone extends Component {
         });
     };
 
-    // handleNewPost = (event) => {
-
-    // }
+    handleNewPost = (text) => {
+        
+        let newPost = {
+            id: null,
+            author: 'Me',
+            postDate: 'Now',
+            content: text
+        };
+        console.log(newPost);
+    };
 
     componentDidMount() {
         this.setState({
@@ -69,7 +76,7 @@ class SlackClone extends Component {
                         <ChatPanel channels={this.state.channels} people={this.state.people} chatChoice={this.handleChatChoice}/>
                     </div>
                     <div className="w-100">
-                        <ChatWindow chat={channelActive}/>
+                        <ChatWindow chat={channelActive} handleNewPost={this.state.handleNewPost}/>
                     </div>  
                 </div>
             </div>

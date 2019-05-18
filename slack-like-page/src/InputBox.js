@@ -11,6 +11,7 @@ class InputBox extends Component {
         this.setState({
             text: event.target.value
         })
+        console.log(event.target)
     };
 
     render() {
