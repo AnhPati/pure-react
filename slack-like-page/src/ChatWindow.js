@@ -4,11 +4,11 @@ import ChatBox from './ChatBox';
 import InputBox from './InputBox';
 import './ChatWindow.css';
 
-function ChatWindow({chat, handleNewPost}) {
+function ChatWindow({chat, handleNewPost, chatId}) {
     return (
-        <div className="container-fluid chatWindow">
+        <div className="container-fluid chatWindow d-flex justify-content-end flex-column pb-3">
             <ChatBox chat={chat}/>
-            <InputBox handleNewPost={handleNewPost}/>
+            <InputBox handleNewPost={handleNewPost} chatId={chatId}/>
         </div>
     )
 }

@@ -35,15 +35,44 @@ class SlackClone extends Component {
         });
     };
 
-    handleNewPost = (text) => {
-        
-        let newPost = {
-            id: null,
-            author: 'Me',
-            postDate: 'Now',
-            content: text
-        };
-        console.log(newPost);
+    handleNewPost = (text, date, id) => {
+        let newChannels = this.state.channels.map(item => {
+            if (item.id === id) {
+                item.posts.push({
+                    id: item.posts.length + 1,
+                    author: 'Me',
+                    postDate: date,
+                    content: text
+                })
+                return (
+                   item 
+                )
+            }
+            return (
+                item
+            );
+        });
+        let newPeople = this.state.people.map(item => {
+            if (item.id === id) {
+                item.posts.push({
+                    id: item.posts.length + 1,
+                    author: 'Me',
+                    postDate: date,
+                    content: text
+                })
+                return (
+                    item
+                )
+            }
+            return (
+                item
+            );
+        });
+        this.setState({
+            channels: newChannels,
+            people: newPeople
+        });
+        console.log(this.state)
     };
 
     componentDidMount() {
@@ -55,28 +84,31 @@ class SlackClone extends Component {
 
     render() {
         let channelActive = [];
+        let channelId;
         this.state.channels.map(item => {
             if (item.active) {
                 return (
-                    channelActive = item.posts
+                    channelActive = item.posts,
+                    channelId = item.id
                 )
             }
         });
         this.state.people.map(item => {
             if (item.active) {
                 return (
-                    channelActive = item.posts
+                    channelActive = item.posts,
+                    channelId = item.id
                 )
             }
         });
         return (
             <div className="w-100">
-                <div className="d-flex flex-nowrap">
+                <div className="d-flex flex-nowrap vh-100">
                     <div className="chatPanel-container">
                         <ChatPanel channels={this.state.channels} people={this.state.people} chatChoice={this.handleChatChoice}/>
                     </div>
                     <div className="w-100">
-                        <ChatWindow chat={channelActive} handleNewPost={this.state.handleNewPost}/>
+                        <ChatWindow chat={channelActive} handleNewPost={this.handleNewPost} chatId={channelId}/>
                     </div>  
                 </div>
             </div>
