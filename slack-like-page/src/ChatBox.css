@@ -1,3 +1,28 @@
 .cList-noPadding {
     padding-inline-start: 0;
 }
+
+.overflowContainer {
+    width: 650px;
+    height: 100%;
+    padding-bottom: 30px; /* yep */
+    left: 325px;
+    position: fixed;
+    box-sizing: border-box;/* HERE ! */
+}
+
+.chatList {
+    width: 650px;
+    margin: 0;
+    padding: 0;
+    height:100%;
+    overflow: auto;
+}
+
+.chatInput {
+    position:fixed;
+    width: 650px;
+    bottom: 0;
+    left: 325px;
+    padding: 1rem;
+}

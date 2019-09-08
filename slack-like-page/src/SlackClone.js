@@ -72,7 +72,6 @@ class SlackClone extends Component {
             channels: newChannels,
             people: newPeople
         });
-        console.log(this.state)
     };
 
     componentDidMount() {

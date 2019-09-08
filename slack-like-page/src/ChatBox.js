@@ -12,9 +12,11 @@ const ChatBox = ({chat}) => {
         )
     });
     return (
-        <ul className="cList-none d-flex flex-column cList-noPadding justify-content-end">
-            {chatList}
-        </ul>
+        <div className="overflowContainer">
+            <ul className="cList-none d-flex flex-column cList-noPadding justify-content-end chatList">
+                {chatList}
+            </ul>
+        </div>
     )
 }
 

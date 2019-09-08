@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './InputBox.css';
+import './ChatBox.css';
 
 class InputBox extends Component {
     state = {
@@ -30,14 +31,14 @@ class InputBox extends Component {
                 this.props.handleNewPost(this.state.text, formatDate, this.props.chatId);
                 this.setState({
                     text: ''
-                })
-            }
-        }
-    }
+                });
+            };
+        };
+    };
 
     render() {
         return (
-            <div>
+            <div class="chatInput">
                 <input
                     className="w-100"
                     type="text"
@@ -47,8 +48,8 @@ class InputBox extends Component {
                     placeholder="Ecrivez votre message"
                 />
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default InputBox;
